@@ -1,100 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>自动化测试-01：了解</title>
-    <url>/2020/12/17/AutoTest01/</url>
-    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
-<li>了解测试内容分类</li>
-<li>了解测试框架</li>
-<li>相关视频教程</li>
-</ul>
-<a id="more"></a>
-<h3 id="测试内容分类"><a href="#测试内容分类" class="headerlink" title="测试内容分类"></a>测试内容分类</h3><ul>
-<li>从软件测试的实践过程看：单元测试、集成测试、确认测试、系统测试、验收测试</li>
-<li>从软件测试的方法策略看：白盒测试、黑盒测试、灰盒测试</li>
-<li>从软件测试的测试视角看：功能测试、性能测试、兼容性测试、安全测试、探索性测试</li>
-<li>从软件测试的技术程度看：手工测试、自动化测试、测试开发</li>
-</ul>
-<h3 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h3><ul>
-<li>Python/PHP/Java/C#/JavaScprit/Ruby + Selenium/Appium + 单元测试框架：开源功能自动化测试方案</li>
-<li>Python + Macaca：阿里巴巴  自动化测试方案</li>
-<li>JavaScript + TestCafe，DevExpress： 开源功能自动化测试方案</li>
-<li>Python/Java/C#/JavaScprit/Ruby + Gauge： 一款开源的功能自动化测试方案</li>
-<li>JavaScript + Postman：免费的Web接口功能自动化测试</li>
-<li>Groovy + SoapUI：开源的Web接口功能自动化测试方案</li>
-<li>更多<ul>
-<li>Selenium：<a href="http://www.selenium.org.cn/category/use">web测试工具</a></li>
-<li>Appium: web、原生、混合应用都能测试</li>
-<li>JMeter：软件压测工具</li>
-</ul>
-</li>
-</ul>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li><a href="https://www.51zxw.net/list.aspx?page=2&amp;cid=670">Appium自动化测试视频教程</a></li>
-<li><a href="https://sutune.me/2018/04/15/appium/">Appium简介</a></li>
-<li><a href="https://hllgithub.github.io/2018/09/09/Appium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">Appium自动化测试介绍和使用说明</a></li>
-<li><a href="http://www.selenium.org.cn/category/use">Selenium</a></li>
-<li><a href="https://python-selenium-zh.readthedocs.io/zh_CN/latest/">Selenium + python 中文文档</a></li>
-<li><a href="https://macacajs.github.io/zh/guide/#%E9%9B%86%E6%88%90%E5%92%8C%E8%9E%8D%E5%90%88">Macaca</a></li>
-<li><a href="https://yq.aliyun.com/articles/398697">Macaca-iOS入门那些事</a></li>
-</ul>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/36896449">一分钟了解自动化测试</a></li>
-</ul>
-<hr>
-<blockquote>
-<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>自动化测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python-03：Web自动化测试【打开Chrome百度搜索Selenium】</title>
-    <url>/2020/12/17/AutoTest03/</url>
-    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
-<li>环境准备</li>
-<li>案例：打开Chrome百度搜索Selenium</li>
-<li>原理总结</li>
-</ul>
-<a id="more"></a>
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
-<li>Win10</li>
-<li>Chrome 84.0.4147.135</li>
-<li>ChromeDriver 84.0.4147.30<ol>
-<li>关闭Chrome更新，避免不停换驱动</li>
-<li>下载Chrome对应版本ChromeDriver驱动<a href="https://chromedriver.chromium.org/downloads">下载地址</a></li>
-<li>将ChromeDriver 放到Python安装目录下. 比如：C:\Users\Administrator\AppData\Local\Programs\Python\Python39</li>
-</ol>
-</li>
-<li>Python 3.9.0</li>
-<li>Selenium 3.141.0<br> 安装命令：pip install selenium (提示：如果执行报错，请检查python环境变量配置)</li>
-</ol>
-<h3 id="案例：打开Chrome百度搜索Selenium"><a href="#案例：打开Chrome百度搜索Selenium" class="headerlink" title="案例：打开Chrome百度搜索Selenium"></a>案例：打开Chrome百度搜索Selenium</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from selenium import  webdriver</span><br><span class="line"># 使用Chrome驱动</span><br><span class="line">driver &#x3D; webdriver.Chrome()</span><br><span class="line"># 让浏览器全屏</span><br><span class="line">driver.maximize_window()</span><br><span class="line"># 打开百度</span><br><span class="line">driver.get(&quot;https:&#x2F;&#x2F;baidu.com&quot;)</span><br><span class="line"># 找到百度搜索框元素</span><br><span class="line">input &#x3D; driver.find_element_by_id(&quot;kw&quot;)</span><br><span class="line"># 往输入框中输入搜索关键词&quot;selenium&quot;</span><br><span class="line">input.send_keys(&quot;selenium&quot;)</span><br><span class="line"># 点击百度一下按钮搜索</span><br><span class="line">search &#x3D; driver.find_element_by_id(&quot;su&quot;)</span><br><span class="line">search.click()</span><br></pre></td></tr></table></figure>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><blockquote>
-<p>其实原理就是 Python 通过Selenium 调用浏览器驱动接口，然后驱动Driver接口操作Web中元素进行交互</p>
-</blockquote>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献:"></a>参考文献:</h3><ul>
-<li><a href="https://selenium-python-zh.readthedocs.io/en/latest/index.html">Selenium-Python中文文档</a></li>
-</ul>
-<hr>
-<blockquote>
-<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>自动化测试</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Selenium</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法与数据结构-梳理汇总</title>
     <url>/2021/02/16/Algorithm-DataStruct01/</url>
     <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
@@ -207,52 +113,6 @@
       </categories>
       <tags>
         <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python-04：AppWeb自动化测试【打开App切换WebView登录】</title>
-    <url>/2020/12/17/AutoTest04/</url>
-    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
-<li>环境准备</li>
-<li>测试步骤</li>
-<li>案例代码</li>
-</ul>
-<a id="more"></a>
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
-<li>NodeJS v12.13.1</li>
-<li>JDK 1.8.0_191</li>
-<li>Android SDK </li>
-<li>Appium-Python-Client </li>
-</ol>
-<blockquote>
-<p>具体教程请看: <a href="https://yanxuewen.cn/2020/10/22/AutoTest02/">自动化测试-02：实践</a></p>
-</blockquote>
-<h3 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h3><ol>
-<li>AppWebView开启调试模式： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">setWebContentsDebuggingEnabled(true);</span><br></pre></td></tr></table></figure></li>
-<li>获取Android Chrome 版本： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adb shell am start -a android.intent.action.VIEW -d  https:&#x2F;&#x2F;liulanmi.com&#x2F;labs&#x2F;core.html</span><br></pre></td></tr></table></figure></li>
-<li>根据Android Chrome版本，下载对应ChromeDriver驱动 <a href="https://chromedriver.chromium.org/downloads">下载地址</a></li>
-<li>将下载的ChromeDriver Copy 至 Appium 目录，比如我的Appium目录： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win</span><br></pre></td></tr></table></figure></li>
-<li>启动APP后并跳转App内嵌的WebView页面，使用Chrome获取WebView中的元素 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">打开Chrome </span><br><span class="line">地址栏输入：chrome:&#x2F;&#x2F;inspect</span><br></pre></td></tr></table></figure>
- 如下图所示：<br> <img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/20201105212810.png" alt=""></li>
-</ol>
-<h3 id="案例代码"><a href="#案例代码" class="headerlink" title="案例代码"></a>案例代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 案例：自动化测试-登录</span><br><span class="line"></span><br><span class="line">from appium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">desired_caps &#x3D; &#123;&#125;</span><br><span class="line">desired_caps[&quot;platformName&quot;] &#x3D; &quot;android&quot;</span><br><span class="line">desired_caps[&quot;platformVersion&quot;] &#x3D; &quot;7.1.2&quot;</span><br><span class="line">desired_caps[&quot;deviceName&quot;] &#x3D; &quot;127.0.0.1:62001&quot;</span><br><span class="line">desired_caps[&quot;appPackage&quot;] &#x3D; &quot;com.guide.custom&quot;</span><br><span class="line">desired_caps[&quot;appActivity&quot;] &#x3D; &quot;com.anyapps.Activity.AALaunch&quot;</span><br><span class="line">desired_caps[&quot;noReset&quot;] &#x3D; &quot;true&quot;</span><br><span class="line">desired_caps[&quot;autoGrantPermissions&quot;] &#x3D; &quot;true&quot;</span><br><span class="line">desired_caps[&#39;chromeOptions&#39;] &#x3D; &#123;&quot;w3c&quot;:False&#125;</span><br><span class="line">desired_caps[&#39;showChromedriverLog&#39;] &#x3D; True</span><br><span class="line"></span><br><span class="line">driver &#x3D; webdriver.Remote(&#39;http:&#x2F;&#x2F;localhost:4723&#x2F;wd&#x2F;hub&#39;, desired_caps)</span><br><span class="line"></span><br><span class="line">view_context &#x3D; &quot;WEBVIEW_com.guide.custom&quot;</span><br><span class="line">driver.switch_to.context(view_context)</span><br><span class="line">time.sleep(5)</span><br><span class="line">print(driver.current_context)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 获取账号和密码元素，输入账号密码</span><br><span class="line">inputAccount &#x3D; driver.find_element_by_id(&quot;account&quot;)</span><br><span class="line">inputAccount.send_keys(&#39;186xxxxxxx&#39;)</span><br><span class="line">inputPassword &#x3D; driver.find_element_by_id(&quot;password&quot;)</span><br><span class="line">inputPassword.send_keys(&#39;123456&#39;)</span><br><span class="line"># 获取登录元素，点击登录</span><br><span class="line">loginBtn &#x3D; driver.find_element_by_class_name(&#39;confirmDisable&#39;)</span><br><span class="line">loginBtn.click()</span><br></pre></td></tr></table></figure>
-<h3 id="Appium-调试App-原理图"><a href="#Appium-调试App-原理图" class="headerlink" title="Appium 调试App 原理图"></a>Appium 调试App 原理图</h3><p><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/QQ%E6%88%AA%E5%9B%BE20201105213544.png" alt=""></p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献:"></a>参考文献:</h3><ul>
-<li><a href="https://selenium-python-zh.readthedocs.io/en/latest/index.html">Selenium-Python中文文档</a></li>
-<li><a href="https://github.com/appium/appium/issues/13306">Fail to locate an web element using “findElement” on Android</a></li>
-</ul>
-<hr>
-<blockquote>
-<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>自动化测试</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Selenium</tag>
-        <tag>Appnium</tag>
       </tags>
   </entry>
   <entry>
@@ -430,36 +290,45 @@
       </tags>
   </entry>
   <entry>
-    <title>C# 与 JS 之间Gzip互通</title>
-    <url>/2020/12/17/JS01/</url>
+    <title>自动化测试-01：了解</title>
+    <url>/2020/12/17/AutoTest01/</url>
     <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
-<li>JS 压缩 Gzip demo</li>
-<li>JS 压缩 Gzip + base64 demo</li>
-<li>JS 解压 CSharp 的 Gzip demo</li>
-<li>JS 解压 CSharp 的 base64 + gzip</li>
-<li>CSharp 压缩 Gzip demo</li>
-<li>CSharp 压缩 Gzip + base64 demo</li>
-<li>CSharp 解压 JS 的 Gzip demo</li>
-<li>CSharp 解压 JS 的 base64 + gzip</li>
-<li>Base64 encode 和 decode </li>
+<li>了解测试内容分类</li>
+<li>了解测试框架</li>
+<li>相关视频教程</li>
 </ul>
-<h3 id="源码地址："><a href="#源码地址：" class="headerlink" title="源码地址："></a>源码地址：</h3><p><a href="https://github.com/aa4790139/GzipSample">https://github.com/aa4790139/GzipSample</a></p>
 <a id="more"></a>
-<h3 id="GZip-文件结构图"><a href="#GZip-文件结构图" class="headerlink" title="GZip 文件结构图"></a>GZip 文件结构图</h3><p><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master//img/20210115204550.jpg" alt=""></p>
-<!--more-->
-<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ul>
-<li><a href="https://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js/">Encoding and Decoding Base64 Strings in Node.js</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/DEFLATE">DEFLATE</a></li>
-<li><a href="https://stackoverflow.com/questions/246801/how-can-you-encode-a-string-to-base64-in-javascript">How can you encode a string to Base64 in JavaScript?</a></li>
-<li><a href="https://stackoverflow.com/questions/3195865/converting-byte-array-to-string-in-javascript">Converting byte array to string in javascript</a></li>
-<li><a href="https://www.jianshu.com/p/c5df0156b229">Array.prototype.slice.call()方法详解</a></li>
-<li><a href="https://stackoverflow.com/questions/7056925/how-does-array-prototype-slice-call-work">how does Array.prototype.slice.call() work?
-</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">JS按位操作符</a></li>
-<li><a href="https://www.iditect.com/how-to/58717282.html">Remove trailing zeros from byte[]</a></li>
-<li><a href="https://stackoverflow.com/questions/17191945/conversion-between-utf-8-arraybuffer-and-string">Conversion between UTF-8 ArrayBuffer and String</a></li>
-<li><a href="https://tool.oschina.net/commons?type=4">ASCLL对照表</a></li>
-<li><a href="https://blog.csdn.net/yc0188/article/details/4155168">GZIP文件格式简介</a></li>
+<h3 id="测试内容分类"><a href="#测试内容分类" class="headerlink" title="测试内容分类"></a>测试内容分类</h3><ul>
+<li>从软件测试的实践过程看：单元测试、集成测试、确认测试、系统测试、验收测试</li>
+<li>从软件测试的方法策略看：白盒测试、黑盒测试、灰盒测试</li>
+<li>从软件测试的测试视角看：功能测试、性能测试、兼容性测试、安全测试、探索性测试</li>
+<li>从软件测试的技术程度看：手工测试、自动化测试、测试开发</li>
+</ul>
+<h3 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h3><ul>
+<li>Python/PHP/Java/C#/JavaScprit/Ruby + Selenium/Appium + 单元测试框架：开源功能自动化测试方案</li>
+<li>Python + Macaca：阿里巴巴  自动化测试方案</li>
+<li>JavaScript + TestCafe，DevExpress： 开源功能自动化测试方案</li>
+<li>Python/Java/C#/JavaScprit/Ruby + Gauge： 一款开源的功能自动化测试方案</li>
+<li>JavaScript + Postman：免费的Web接口功能自动化测试</li>
+<li>Groovy + SoapUI：开源的Web接口功能自动化测试方案</li>
+<li>更多<ul>
+<li>Selenium：<a href="http://www.selenium.org.cn/category/use">web测试工具</a></li>
+<li>Appium: web、原生、混合应用都能测试</li>
+<li>JMeter：软件压测工具</li>
+</ul>
+</li>
+</ul>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li><a href="https://www.51zxw.net/list.aspx?page=2&amp;cid=670">Appium自动化测试视频教程</a></li>
+<li><a href="https://sutune.me/2018/04/15/appium/">Appium简介</a></li>
+<li><a href="https://hllgithub.github.io/2018/09/09/Appium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">Appium自动化测试介绍和使用说明</a></li>
+<li><a href="http://www.selenium.org.cn/category/use">Selenium</a></li>
+<li><a href="https://python-selenium-zh.readthedocs.io/zh_CN/latest/">Selenium + python 中文文档</a></li>
+<li><a href="https://macacajs.github.io/zh/guide/#%E9%9B%86%E6%88%90%E5%92%8C%E8%9E%8D%E5%90%88">Macaca</a></li>
+<li><a href="https://yq.aliyun.com/articles/398697">Macaca-iOS入门那些事</a></li>
+</ul>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/36896449">一分钟了解自动化测试</a></li>
 </ul>
 <hr>
 <blockquote>
@@ -467,12 +336,56 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>压缩</category>
+        <category>自动化测试</category>
       </categories>
       <tags>
-        <tag>C#</tag>
-        <tag>Gzip</tag>
-        <tag>JS</tag>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python-04：AppWeb自动化测试【打开App切换WebView登录】</title>
+    <url>/2020/12/17/AutoTest04/</url>
+    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
+<li>环境准备</li>
+<li>测试步骤</li>
+<li>案例代码</li>
+</ul>
+<a id="more"></a>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
+<li>NodeJS v12.13.1</li>
+<li>JDK 1.8.0_191</li>
+<li>Android SDK </li>
+<li>Appium-Python-Client </li>
+</ol>
+<blockquote>
+<p>具体教程请看: <a href="https://yanxuewen.cn/2020/10/22/AutoTest02/">自动化测试-02：实践</a></p>
+</blockquote>
+<h3 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h3><ol>
+<li>AppWebView开启调试模式： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">setWebContentsDebuggingEnabled(true);</span><br></pre></td></tr></table></figure></li>
+<li>获取Android Chrome 版本： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adb shell am start -a android.intent.action.VIEW -d  https:&#x2F;&#x2F;liulanmi.com&#x2F;labs&#x2F;core.html</span><br></pre></td></tr></table></figure></li>
+<li>根据Android Chrome版本，下载对应ChromeDriver驱动 <a href="https://chromedriver.chromium.org/downloads">下载地址</a></li>
+<li>将下载的ChromeDriver Copy 至 Appium 目录，比如我的Appium目录： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win</span><br></pre></td></tr></table></figure></li>
+<li>启动APP后并跳转App内嵌的WebView页面，使用Chrome获取WebView中的元素 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">打开Chrome </span><br><span class="line">地址栏输入：chrome:&#x2F;&#x2F;inspect</span><br></pre></td></tr></table></figure>
+ 如下图所示：<br> <img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/20201105212810.png" alt=""></li>
+</ol>
+<h3 id="案例代码"><a href="#案例代码" class="headerlink" title="案例代码"></a>案例代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 案例：自动化测试-登录</span><br><span class="line"></span><br><span class="line">from appium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">desired_caps &#x3D; &#123;&#125;</span><br><span class="line">desired_caps[&quot;platformName&quot;] &#x3D; &quot;android&quot;</span><br><span class="line">desired_caps[&quot;platformVersion&quot;] &#x3D; &quot;7.1.2&quot;</span><br><span class="line">desired_caps[&quot;deviceName&quot;] &#x3D; &quot;127.0.0.1:62001&quot;</span><br><span class="line">desired_caps[&quot;appPackage&quot;] &#x3D; &quot;com.guide.custom&quot;</span><br><span class="line">desired_caps[&quot;appActivity&quot;] &#x3D; &quot;com.anyapps.Activity.AALaunch&quot;</span><br><span class="line">desired_caps[&quot;noReset&quot;] &#x3D; &quot;true&quot;</span><br><span class="line">desired_caps[&quot;autoGrantPermissions&quot;] &#x3D; &quot;true&quot;</span><br><span class="line">desired_caps[&#39;chromeOptions&#39;] &#x3D; &#123;&quot;w3c&quot;:False&#125;</span><br><span class="line">desired_caps[&#39;showChromedriverLog&#39;] &#x3D; True</span><br><span class="line"></span><br><span class="line">driver &#x3D; webdriver.Remote(&#39;http:&#x2F;&#x2F;localhost:4723&#x2F;wd&#x2F;hub&#39;, desired_caps)</span><br><span class="line"></span><br><span class="line">view_context &#x3D; &quot;WEBVIEW_com.guide.custom&quot;</span><br><span class="line">driver.switch_to.context(view_context)</span><br><span class="line">time.sleep(5)</span><br><span class="line">print(driver.current_context)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 获取账号和密码元素，输入账号密码</span><br><span class="line">inputAccount &#x3D; driver.find_element_by_id(&quot;account&quot;)</span><br><span class="line">inputAccount.send_keys(&#39;186xxxxxxx&#39;)</span><br><span class="line">inputPassword &#x3D; driver.find_element_by_id(&quot;password&quot;)</span><br><span class="line">inputPassword.send_keys(&#39;123456&#39;)</span><br><span class="line"># 获取登录元素，点击登录</span><br><span class="line">loginBtn &#x3D; driver.find_element_by_class_name(&#39;confirmDisable&#39;)</span><br><span class="line">loginBtn.click()</span><br></pre></td></tr></table></figure>
+<h3 id="Appium-调试App-原理图"><a href="#Appium-调试App-原理图" class="headerlink" title="Appium 调试App 原理图"></a>Appium 调试App 原理图</h3><p><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/QQ%E6%88%AA%E5%9B%BE20201105213544.png" alt=""></p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献:"></a>参考文献:</h3><ul>
+<li><a href="https://selenium-python-zh.readthedocs.io/en/latest/index.html">Selenium-Python中文文档</a></li>
+<li><a href="https://github.com/appium/appium/issues/13306">Fail to locate an web element using “findElement” on Android</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>自动化测试</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Selenium</tag>
+        <tag>Appnium</tag>
       </tags>
   </entry>
   <entry>
@@ -596,21 +509,32 @@
       </tags>
   </entry>
   <entry>
-    <title>屏蔽：键盘按键、鼠标点击事件</title>
-    <url>/2020/12/17/PreventEvent/</url>
+    <title>Python-03：Web自动化测试【打开Chrome百度搜索Selenium】</title>
+    <url>/2020/12/17/AutoTest03/</url>
     <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
-<li>屏蔽-键盘按键</li>
-<li>屏蔽-鼠标点击</li>
-<li>屏蔽-BackSpace</li>
+<li>环境准备</li>
+<li>案例：打开Chrome百度搜索Selenium</li>
+<li>原理总结</li>
 </ul>
 <a id="more"></a>
-<h3 id="屏蔽-键盘按键"><a href="#屏蔽-键盘按键" class="headerlink" title="屏蔽-键盘按键"></a>屏蔽-键盘按键</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;添加按键监听</span><br><span class="line">window.addEventListener(&#39;keydown&#39;, this.onKeyDown,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;移除按键监听</span><br><span class="line">window.removeEventListener(&quot;keydown&quot;,this.onKeyDown,true);</span><br><span class="line"></span><br><span class="line">onKeyDown(val)&#123;</span><br><span class="line">    console.log(&#39;按下&#39; + val.key);</span><br><span class="line">    val.preventDefault();</span><br><span class="line">    val.stopPropagation();</span><br><span class="line">    val.cancelBubble &#x3D; true;</span><br><span class="line">    window.event.returnValue &#x3D; false;</span><br><span class="line">    window.event.preventDefault();</span><br><span class="line">    window.event.stopPropagation();</span><br><span class="line">    window.event.cancelBubble &#x3D; true;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="屏蔽-鼠标点击"><a href="#屏蔽-鼠标点击" class="headerlink" title="屏蔽-鼠标点击"></a>屏蔽-鼠标点击</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;添加鼠标点击监听</span><br><span class="line">window.addEventListener(&#39;mousedown&#39;,this.onClick,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;移除鼠标点击监听</span><br><span class="line">window.removeEventListener(&#39;mousedown&#39;,this.onClick,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;which: 1-左键 2-中键 3-右键</span><br><span class="line">onClick(val)&#123;</span><br><span class="line">    console.error(&#39;点击&#39; + val.which);</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="屏蔽-BackSpace"><a href="#屏蔽-BackSpace" class="headerlink" title="屏蔽-BackSpace"></a>屏蔽-BackSpace</h3><p>在IE页面跳转过程中，按BackSpace退格键默认返回上此浏览页，导致路由中断引起(Vue)页面卡死，所以需要在IE中屏蔽掉BackSpce退格键，但是在输入框中则不屏蔽。</p>
-<ul>
-<li>preventBackSpce.js： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export const banBackSpace &#x3D; (e) &#x3D;&gt; &#123;</span><br><span class="line">  let ev &#x3D; e || window.event</span><br><span class="line">  &#x2F;&#x2F; 各种浏览器下获取事件对象</span><br><span class="line">  let obj &#x3D; ev.relatedTarget || ev.srcElement || ev.target || ev.currentTarget</span><br><span class="line">  &#x2F;&#x2F; 按下Backspace键</span><br><span class="line">  if (ev.keyCode &#x3D;&#x3D;&#x3D; 8) &#123;</span><br><span class="line">    &#x2F;&#x2F; 标签名称</span><br><span class="line">    let tagName &#x3D; obj.nodeName.toLowerCase();</span><br><span class="line">    &#x2F;&#x2F; 如果标签不是input或者textarea则阻止Backspace</span><br><span class="line">    if (tagName !&#x3D;&#x3D; &#39;input&#39; &amp;&amp; tagName !&#x3D;&#x3D; &#39;textarea&#39;) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">    let tagType &#x3D; obj.type.toLowerCase() &#x2F;&#x2F; 标签类型</span><br><span class="line">    &#x2F;&#x2F; input标签除了下面几种类型，全部阻止Backspace</span><br><span class="line">    if (tagName &#x3D;&#x3D;&#x3D; &#39;input&#39; &amp;&amp; (tagType !&#x3D;&#x3D; &#39;text&#39; &amp;&amp; tagType !&#x3D;&#x3D; &#39;textarea&#39; &amp;&amp; tagType !&#x3D;&#x3D; &#39;password&#39;)) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; input或者textarea输入框如果不可编辑则阻止Backspace</span><br><span class="line">    if ((tagName &#x3D;&#x3D;&#x3D; &#39;input&#39; || tagName &#x3D;&#x3D;&#x3D; &#39;textarea&#39;) &amp;&amp; (obj.readOnly &#x3D;&#x3D;&#x3D; true || obj.disabled &#x3D;&#x3D;&#x3D; true)) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function stopIt(ev) &#123;</span><br><span class="line">  if (ev.preventDefault) &#123;</span><br><span class="line">    &#x2F;&#x2F; preventDefault()方法阻止元素发生默认的行为</span><br><span class="line">    ev.preventDefault()</span><br><span class="line">  &#125;</span><br><span class="line">  if (ev.returnValue) &#123;</span><br><span class="line">    &#x2F;&#x2F; IE浏览器下用window.event.returnValue &#x3D; false;实现阻止元素发生默认的行为</span><br><span class="line">  &#125;</span><br><span class="line">  return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>使用方法：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 在需要使用的Vue页面引入组件(一般在main.vue中添加)</span><br><span class="line">import &#123;banBackSpace&#125; from &quot;@&#x2F;util&#x2F;preventBackspace&quot;;</span><br><span class="line"></span><br><span class="line">2. mounted 钩子函数挂载事件</span><br><span class="line">document.onkeypress &#x3D; banBackSpace;</span><br><span class="line">document.onkeydown &#x3D; banBackSpace;</span><br></pre></td></tr></table></figure>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
+<li>Win10</li>
+<li>Chrome 84.0.4147.135</li>
+<li>ChromeDriver 84.0.4147.30<ol>
+<li>关闭Chrome更新，避免不停换驱动</li>
+<li>下载Chrome对应版本ChromeDriver驱动<a href="https://chromedriver.chromium.org/downloads">下载地址</a></li>
+<li>将ChromeDriver 放到Python安装目录下. 比如：C:\Users\Administrator\AppData\Local\Programs\Python\Python39</li>
+</ol>
 </li>
+<li>Python 3.9.0</li>
+<li>Selenium 3.141.0<br> 安装命令：pip install selenium (提示：如果执行报错，请检查python环境变量配置)</li>
+</ol>
+<h3 id="案例：打开Chrome百度搜索Selenium"><a href="#案例：打开Chrome百度搜索Selenium" class="headerlink" title="案例：打开Chrome百度搜索Selenium"></a>案例：打开Chrome百度搜索Selenium</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from selenium import  webdriver</span><br><span class="line"># 使用Chrome驱动</span><br><span class="line">driver &#x3D; webdriver.Chrome()</span><br><span class="line"># 让浏览器全屏</span><br><span class="line">driver.maximize_window()</span><br><span class="line"># 打开百度</span><br><span class="line">driver.get(&quot;https:&#x2F;&#x2F;baidu.com&quot;)</span><br><span class="line"># 找到百度搜索框元素</span><br><span class="line">input &#x3D; driver.find_element_by_id(&quot;kw&quot;)</span><br><span class="line"># 往输入框中输入搜索关键词&quot;selenium&quot;</span><br><span class="line">input.send_keys(&quot;selenium&quot;)</span><br><span class="line"># 点击百度一下按钮搜索</span><br><span class="line">search &#x3D; driver.find_element_by_id(&quot;su&quot;)</span><br><span class="line">search.click()</span><br></pre></td></tr></table></figure>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><blockquote>
+<p>其实原理就是 Python 通过Selenium 调用浏览器驱动接口，然后驱动Driver接口操作Web中元素进行交互</p>
+</blockquote>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献:"></a>参考文献:</h3><ul>
+<li><a href="https://selenium-python-zh.readthedocs.io/en/latest/index.html">Selenium-Python中文文档</a></li>
 </ul>
 <hr>
 <blockquote>
@@ -618,10 +542,11 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>H5</category>
+        <category>自动化测试</category>
       </categories>
       <tags>
-        <tag>事件屏蔽</tag>
+        <tag>Python</tag>
+        <tag>Selenium</tag>
       </tags>
   </entry>
   <entry>
@@ -672,50 +597,32 @@
       </tags>
   </entry>
   <entry>
-    <title>全栈学习-开篇-001</title>
-    <url>/2020/12/17/LearningFullStack01/</url>
+    <title>屏蔽：键盘按键、鼠标点击事件</title>
+    <url>/2020/12/17/PreventEvent/</url>
     <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
-<li>技术栈介绍</li>
-<li>环境准备</li>
+<li>屏蔽-键盘按键</li>
+<li>屏蔽-鼠标点击</li>
+<li>屏蔽-BackSpace</li>
 </ul>
 <a id="more"></a>
-<blockquote>
-<p>起因：在网上搜索了挺久，都没找到让我很满意的项目学习，也买了好几个付费项目，看了一部分就会发现看不下去，发现很多问题，虽然说能学到一部分东西，但感觉这些项目只是为了快速赚钱搞的，项目结构不清晰、缺少项目相关的介绍文档、前后端项目代码不分离，代码也写的非常临时和随意等等，可能我要求过高了。我如果用这种方式去做一个正式商业化的项目，用这种态度搞出来的东西肯定做不大。说实话我以前做东西也很随意，但自从我读了《程序员修炼之道》这本书后(若想成为一名真正的程序员，一定要去好好阅读这边书，去吸收点灵气)，让我受益匪浅。要想成为一个好的工程师，就要约束好自己，做事情不要太随意，得有点工匠精神，像匠人一样打造自己的武器，一段时间后你会发现自己层次上了一个阶梯。为了提升下自己全栈方便的能力，选择了我慕客上购买的一个小项目，这个小项目很适合入手，所以就拿这个项目(简版-慕客商城)开启全栈学习之旅。</p>
-</blockquote>
-<h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><ol>
-<li><p>前端</p>
+<h3 id="屏蔽-键盘按键"><a href="#屏蔽-键盘按键" class="headerlink" title="屏蔽-键盘按键"></a>屏蔽-键盘按键</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;添加按键监听</span><br><span class="line">window.addEventListener(&#39;keydown&#39;, this.onKeyDown,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;移除按键监听</span><br><span class="line">window.removeEventListener(&quot;keydown&quot;,this.onKeyDown,true);</span><br><span class="line"></span><br><span class="line">onKeyDown(val)&#123;</span><br><span class="line">    console.log(&#39;按下&#39; + val.key);</span><br><span class="line">    val.preventDefault();</span><br><span class="line">    val.stopPropagation();</span><br><span class="line">    val.cancelBubble &#x3D; true;</span><br><span class="line">    window.event.returnValue &#x3D; false;</span><br><span class="line">    window.event.preventDefault();</span><br><span class="line">    window.event.stopPropagation();</span><br><span class="line">    window.event.cancelBubble &#x3D; true;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="屏蔽-鼠标点击"><a href="#屏蔽-鼠标点击" class="headerlink" title="屏蔽-鼠标点击"></a>屏蔽-鼠标点击</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;添加鼠标点击监听</span><br><span class="line">window.addEventListener(&#39;mousedown&#39;,this.onClick,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;移除鼠标点击监听</span><br><span class="line">window.removeEventListener(&#39;mousedown&#39;,this.onClick,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;which: 1-左键 2-中键 3-右键</span><br><span class="line">onClick(val)&#123;</span><br><span class="line">    console.error(&#39;点击&#39; + val.which);</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="屏蔽-BackSpace"><a href="#屏蔽-BackSpace" class="headerlink" title="屏蔽-BackSpace"></a>屏蔽-BackSpace</h3><p>在IE页面跳转过程中，按BackSpace退格键默认返回上此浏览页，导致路由中断引起(Vue)页面卡死，所以需要在IE中屏蔽掉BackSpce退格键，但是在输入框中则不屏蔽。</p>
 <ul>
-<li>Vue - 2.2.6</li>
-<li>vue-cookie - 1.1.4</li>
-<li>vue-resource - 1.3.1</li>
-<li>vue-router - 2.3.1</li>
-<li>vuex - 2.3.1</li>
-</ul>
+<li>preventBackSpce.js： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export const banBackSpace &#x3D; (e) &#x3D;&gt; &#123;</span><br><span class="line">  let ev &#x3D; e || window.event</span><br><span class="line">  &#x2F;&#x2F; 各种浏览器下获取事件对象</span><br><span class="line">  let obj &#x3D; ev.relatedTarget || ev.srcElement || ev.target || ev.currentTarget</span><br><span class="line">  &#x2F;&#x2F; 按下Backspace键</span><br><span class="line">  if (ev.keyCode &#x3D;&#x3D;&#x3D; 8) &#123;</span><br><span class="line">    &#x2F;&#x2F; 标签名称</span><br><span class="line">    let tagName &#x3D; obj.nodeName.toLowerCase();</span><br><span class="line">    &#x2F;&#x2F; 如果标签不是input或者textarea则阻止Backspace</span><br><span class="line">    if (tagName !&#x3D;&#x3D; &#39;input&#39; &amp;&amp; tagName !&#x3D;&#x3D; &#39;textarea&#39;) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">    let tagType &#x3D; obj.type.toLowerCase() &#x2F;&#x2F; 标签类型</span><br><span class="line">    &#x2F;&#x2F; input标签除了下面几种类型，全部阻止Backspace</span><br><span class="line">    if (tagName &#x3D;&#x3D;&#x3D; &#39;input&#39; &amp;&amp; (tagType !&#x3D;&#x3D; &#39;text&#39; &amp;&amp; tagType !&#x3D;&#x3D; &#39;textarea&#39; &amp;&amp; tagType !&#x3D;&#x3D; &#39;password&#39;)) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; input或者textarea输入框如果不可编辑则阻止Backspace</span><br><span class="line">    if ((tagName &#x3D;&#x3D;&#x3D; &#39;input&#39; || tagName &#x3D;&#x3D;&#x3D; &#39;textarea&#39;) &amp;&amp; (obj.readOnly &#x3D;&#x3D;&#x3D; true || obj.disabled &#x3D;&#x3D;&#x3D; true)) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function stopIt(ev) &#123;</span><br><span class="line">  if (ev.preventDefault) &#123;</span><br><span class="line">    &#x2F;&#x2F; preventDefault()方法阻止元素发生默认的行为</span><br><span class="line">    ev.preventDefault()</span><br><span class="line">  &#125;</span><br><span class="line">  if (ev.returnValue) &#123;</span><br><span class="line">    &#x2F;&#x2F; IE浏览器下用window.event.returnValue &#x3D; false;实现阻止元素发生默认的行为</span><br><span class="line">  &#125;</span><br><span class="line">  return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>使用方法：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 在需要使用的Vue页面引入组件(一般在main.vue中添加)</span><br><span class="line">import &#123;banBackSpace&#125; from &quot;@&#x2F;util&#x2F;preventBackspace&quot;;</span><br><span class="line"></span><br><span class="line">2. mounted 钩子函数挂载事件</span><br><span class="line">document.onkeypress &#x3D; banBackSpace;</span><br><span class="line">document.onkeydown &#x3D; banBackSpace;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>后端</p>
-<ul>
-<li>Node.js - 12.13.1</li>
-<li>Express - 4.14.1</li>
-<li>Mongoose - 5.0.1</li>
-<li>Mongodb - 4.2.8</li>
 </ul>
-</li>
-</ol>
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
-<li>WebStorm - 2020.1 (方便后端调试，对比VScode、SublimeText、HBuildX 这IDE功能更强大)</li>
-<li>XShell6 、XFTP6 </li>
-<li>Navicat Premium 12 (低版本不支持连mongodb，所以请选择高一点的版本)</li>
-</ul>
+<hr>
 <blockquote>
-<p>未完待续…</p>
+<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
 </blockquote>
 ]]></content>
       <categories>
-        <category>全栈</category>
+        <category>H5</category>
       </categories>
       <tags>
-        <tag>全栈</tag>
-        <tag>NodeJS</tag>
+        <tag>事件屏蔽</tag>
       </tags>
   </entry>
   <entry>
@@ -770,27 +677,134 @@
       </tags>
   </entry>
   <entry>
-    <title>uni-app 如何引入Iconfont阿里巴巴矢量图标库</title>
-    <url>/2020/12/17/UniApp01/</url>
-    <content><![CDATA[<h3 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下:"></a>步骤如下:</h3><ol>
-<li>下载图标项目, 解压后效果如下<br><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/20201113164039.png" alt=""></li>
-<li><p>修改iconfont.css文件</p>
-<p> 修改前格式：</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@font-face &#123;font-family: &quot;iconfont&quot;;</span><br><span class="line">src: url(&#39;iconfont.eot?t&#x3D;1605254910083&#39;); &#x2F;* IE9 *&#x2F;</span><br><span class="line">src: url(&#39;iconfont.eot?t&#x3D;1605254910083#iefix&#39;) format(&#39;embedded-opentype&#39;), &#x2F;* IE6-IE8 *&#x2F;</span><br><span class="line">url(&#39;data:application&#x2F;x-font-woff2;charset&#x3D;utf-8;base64,转换的base64内容&#39;) format(&#39;woff2&#39;),</span><br><span class="line">url(&#39;iconfont.woff?t&#x3D;1605254910083&#39;) format(&#39;woff&#39;),</span><br><span class="line">url(&#39;iconfont.ttf?t&#x3D;1605254910083&#39;) format(&#39;truetype&#39;), &#x2F;* chrome, firefox, opera, Safari, Android, iOS 4.2+ *&#x2F;</span><br><span class="line">url(&#39;iconfont.svg?t&#x3D;1605254910083#iconfont&#39;) format(&#39;svg&#39;); &#x2F;* iOS 4.1- *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 修改后格式: </p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">    font-family: &quot;iconfont&quot;;</span><br><span class="line">    src: url(&#39;data:application&#x2F;x-font-woff2;charset&#x3D;utf-8;base64,转换的base64内容&#39;) format(&#39;woff2&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>Copy字体文件iconfont.ttf和样式文件iconfont.css 至UniApp项目static/font目录中</li>
-</ol>
+    <title>C# 与 JS 之间Gzip互通</title>
+    <url>/2020/12/17/JS01/</url>
+    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
+<li>JS 压缩 Gzip demo</li>
+<li>JS 压缩 Gzip + base64 demo</li>
+<li>JS 解压 CSharp 的 Gzip demo</li>
+<li>JS 解压 CSharp 的 base64 + gzip</li>
+<li>CSharp 压缩 Gzip demo</li>
+<li>CSharp 压缩 Gzip + base64 demo</li>
+<li>CSharp 解压 JS 的 Gzip demo</li>
+<li>CSharp 解压 JS 的 base64 + gzip</li>
+<li>Base64 encode 和 decode </li>
+</ul>
+<h3 id="源码地址："><a href="#源码地址：" class="headerlink" title="源码地址："></a>源码地址：</h3><p><a href="https://github.com/aa4790139/GzipSample">https://github.com/aa4790139/GzipSample</a></p>
+<a id="more"></a>
+<h3 id="GZip-文件结构图"><a href="#GZip-文件结构图" class="headerlink" title="GZip 文件结构图"></a>GZip 文件结构图</h3><p><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master//img/20210115204550.jpg" alt=""></p>
+<!--more-->
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ul>
+<li><a href="https://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js/">Encoding and Decoding Base64 Strings in Node.js</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/DEFLATE">DEFLATE</a></li>
+<li><a href="https://stackoverflow.com/questions/246801/how-can-you-encode-a-string-to-base64-in-javascript">How can you encode a string to Base64 in JavaScript?</a></li>
+<li><a href="https://stackoverflow.com/questions/3195865/converting-byte-array-to-string-in-javascript">Converting byte array to string in javascript</a></li>
+<li><a href="https://www.jianshu.com/p/c5df0156b229">Array.prototype.slice.call()方法详解</a></li>
+<li><a href="https://stackoverflow.com/questions/7056925/how-does-array-prototype-slice-call-work">how does Array.prototype.slice.call() work?
+</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">JS按位操作符</a></li>
+<li><a href="https://www.iditect.com/how-to/58717282.html">Remove trailing zeros from byte[]</a></li>
+<li><a href="https://stackoverflow.com/questions/17191945/conversion-between-utf-8-arraybuffer-and-string">Conversion between UTF-8 ArrayBuffer and String</a></li>
+<li><a href="https://tool.oschina.net/commons?type=4">ASCLL对照表</a></li>
+<li><a href="https://blog.csdn.net/yc0188/article/details/4155168">GZIP文件格式简介</a></li>
+</ul>
 <hr>
 <blockquote>
 <p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
 </blockquote>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>压缩</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Gzip</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>uniapp 入门实战 02：编译时动态替换配置方案</title>
+    <url>/2021/07/17/UniApp02/</url>
+    <content><![CDATA[<h2 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h2><ul>
+<li>通过vue.config 实现</li>
+<li>示例</li>
+</ul>
+<hr>
+<h2 id="通过vue-config-实现"><a href="#通过vue-config-实现" class="headerlink" title="通过vue.config 实现"></a>通过vue.config 实现</h2><hr>
+<p>由于我们公司业务需求，同一份uniapp项目代码需搞出两个不同名称的小程序，所以每次切换项目配置时，需要改好几处配置信息。根据以前的经验，就是通过webpack编译时，动态选择不同的配置。看到工程项目结构后我傻眼了，编译相关的uniapp 框架完全封装集成完，让人无需关系。可问题是我现在需要啊~…  😭</p>
+<a id="more"></a>
+<p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513221230.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513221230.png"></p>
+<p>先google一下，都找不到uniapp 编译相关资料。只好翻uniapp 官网，看到以下信息，希望就在眼前。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222337.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222337.png"></p>
+<p>所以解决方案就来了  😜</p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><ul>
+<li><p>首先：项目根目录创建vue.config.js</p>
+<p>  <img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222808.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222808.png"></p>
+</li>
+<li><p>其次：vue.config.js（替换微信小程序appid）</p>
+  <figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 创建日期: 2021-05-13</span></span><br><span class="line"><span class="comment">* 文件名称：vue.config.js</span></span><br><span class="line"><span class="comment">* 创建作者：Potter</span></span><br><span class="line"><span class="comment">* 开发版本：1.0.0</span></span><br><span class="line"><span class="comment">* 相关说明：</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;------------------------------------------&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config]: Go...&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 读取launch_config.json 配置</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> serverConfig = <span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> data = fs.readFileSync(path.join(__dirname, <span class="string">&#x27;./static/launch_config.json&#x27;</span>), <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">	<span class="keyword">let</span> launchConfig = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line">	serverConfig = launchConfig[<span class="string">&quot;server_configs&quot;</span>][launchConfig[<span class="string">&quot;server&quot;</span>]];</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config] : current choice configInfo=&quot;</span> + <span class="built_in">JSON</span>.stringify(serverConfig));</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">	<span class="built_in">console</span>.error(<span class="string">&quot;Compile [Auto replace config] : read lanch_config error ! e=&quot;</span> + e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 读取manifest.json, 采用当前渲染server_config 替换掉manifest.json 中的对应字段</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> manifestPath = path.join(__dirname, <span class="string">&#x27;./manifest.json&#x27;</span>);</span><br><span class="line">	<span class="keyword">const</span> data = fs.readFileSync(manifestPath, <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">	<span class="keyword">let</span> manifest = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config] : manifest &quot;</span> + <span class="string">`appid[<span class="subst">$&#123;manifest[<span class="string">&quot;mp-weixin&quot;</span>][<span class="string">&#x27;appid&#x27;</span>]&#125;</span>-&gt;<span class="subst">$&#123;serverConfig[<span class="string">&#x27;appid&#x27;</span>]&#125;</span>]`</span>);</span><br><span class="line">	manifest[<span class="string">&quot;mp-weixin&quot;</span>][<span class="string">&#x27;appid&#x27;</span>] = serverConfig[<span class="string">&#x27;appid&#x27;</span>];</span><br><span class="line"></span><br><span class="line">	fs.writeFileSync(manifestPath, <span class="built_in">JSON</span>.stringify(manifest, <span class="literal">null</span>, <span class="number">4</span>));</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">	<span class="built_in">console</span>.error(<span class="string">&quot;Compile [Auto replace config] : read manifest error ! e=&quot;</span> + e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config]: Complete !&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;------------------------------------------&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后：运行即可，可以看到以下appid 已替换</p>
+<p>  <img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513223413.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513223413.png"></p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>以上：如发现有问题，欢迎留言指出，我及时更正</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>uniapp 入门实战</category>
       </categories>
       <tags>
         <tag>UniApp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全栈学习-开篇-001</title>
+    <url>/2020/12/17/LearningFullStack01/</url>
+    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
+<li>技术栈介绍</li>
+<li>环境准备</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>起因：在网上搜索了挺久，都没找到让我很满意的项目学习，也买了好几个付费项目，看了一部分就会发现看不下去，发现很多问题，虽然说能学到一部分东西，但感觉这些项目只是为了快速赚钱搞的，项目结构不清晰、缺少项目相关的介绍文档、前后端项目代码不分离，代码也写的非常临时和随意等等，可能我要求过高了。我如果用这种方式去做一个正式商业化的项目，用这种态度搞出来的东西肯定做不大。说实话我以前做东西也很随意，但自从我读了《程序员修炼之道》这本书后(若想成为一名真正的程序员，一定要去好好阅读这边书，去吸收点灵气)，让我受益匪浅。要想成为一个好的工程师，就要约束好自己，做事情不要太随意，得有点工匠精神，像匠人一样打造自己的武器，一段时间后你会发现自己层次上了一个阶梯。为了提升下自己全栈方便的能力，选择了我慕客上购买的一个小项目，这个小项目很适合入手，所以就拿这个项目(简版-慕客商城)开启全栈学习之旅。</p>
+</blockquote>
+<h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><ol>
+<li><p>前端</p>
+<ul>
+<li>Vue - 2.2.6</li>
+<li>vue-cookie - 1.1.4</li>
+<li>vue-resource - 1.3.1</li>
+<li>vue-router - 2.3.1</li>
+<li>vuex - 2.3.1</li>
+</ul>
+</li>
+<li><p>后端</p>
+<ul>
+<li>Node.js - 12.13.1</li>
+<li>Express - 4.14.1</li>
+<li>Mongoose - 5.0.1</li>
+<li>Mongodb - 4.2.8</li>
+</ul>
+</li>
+</ol>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
+<li>WebStorm - 2020.1 (方便后端调试，对比VScode、SublimeText、HBuildX 这IDE功能更强大)</li>
+<li>XShell6 、XFTP6 </li>
+<li>Navicat Premium 12 (低版本不支持连mongodb，所以请选择高一点的版本)</li>
+</ul>
+<blockquote>
+<p>未完待续…</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>全栈</category>
+      </categories>
+      <tags>
+        <tag>全栈</tag>
+        <tag>NodeJS</tag>
       </tags>
   </entry>
   <entry>
@@ -847,38 +861,61 @@
       </tags>
   </entry>
   <entry>
-    <title>uniapp 入门实战 02：编译时动态替换配置方案</title>
-    <url>/2021/07/17/UniApp02/</url>
+    <title>uniapp 入门实战 03：富文本显示</title>
+    <url>/2021/07/17/UniApp03/</url>
     <content><![CDATA[<h2 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h2><ul>
-<li>通过vue.config 实现</li>
-<li>示例</li>
+<li>需求效果</li>
+<li>解决方案一：利用rich-text的v-html属性</li>
+<li>解决方案二：利用rich-text的nodes参数</li>
 </ul>
+<h2 id="实现效果："><a href="#实现效果：" class="headerlink" title="实现效果："></a>实现效果：</h2><p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210602132458.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210602132458.png"></p>
+<p>这行文字包含3部分，前：“您当前有”，中：“3”，后：“个客户”，最直接的方案就是用三个view标签搞定。我想万一有很多段需要特殊突显显示怎么办法？这种直接办法就不可取了，所以去官网了解富文本组件。</p>
 <hr>
-<h2 id="通过vue-config-实现"><a href="#通过vue-config-实现" class="headerlink" title="通过vue.config 实现"></a>通过vue.config 实现</h2><hr>
-<p>由于我们公司业务需求，同一份uniapp项目代码需搞出两个不同名称的小程序，所以每次切换项目配置时，需要改好几处配置信息。根据以前的经验，就是通过webpack编译时，动态选择不同的配置。看到工程项目结构后我傻眼了，编译相关的uniapp 框架完全封装集成完，让人无需关系。可问题是我现在需要啊~…  😭</p>
 <a id="more"></a>
-<p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513221230.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513221230.png"></p>
-<p>先google一下，都找不到uniapp 编译相关资料。只好翻uniapp 官网，看到以下信息，希望就在眼前。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222337.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222337.png"></p>
-<p>所以解决方案就来了  😜</p>
-<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><ul>
-<li><p>首先：项目根目录创建vue.config.js</p>
-<p>  <img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222808.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513222808.png"></p>
-</li>
-<li><p>其次：vue.config.js（替换微信小程序appid）</p>
-  <figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 创建日期: 2021-05-13</span></span><br><span class="line"><span class="comment">* 文件名称：vue.config.js</span></span><br><span class="line"><span class="comment">* 创建作者：Potter</span></span><br><span class="line"><span class="comment">* 开发版本：1.0.0</span></span><br><span class="line"><span class="comment">* 相关说明：</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;------------------------------------------&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config]: Go...&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 读取launch_config.json 配置</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> serverConfig = <span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> data = fs.readFileSync(path.join(__dirname, <span class="string">&#x27;./static/launch_config.json&#x27;</span>), <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">	<span class="keyword">let</span> launchConfig = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line">	serverConfig = launchConfig[<span class="string">&quot;server_configs&quot;</span>][launchConfig[<span class="string">&quot;server&quot;</span>]];</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config] : current choice configInfo=&quot;</span> + <span class="built_in">JSON</span>.stringify(serverConfig));</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">	<span class="built_in">console</span>.error(<span class="string">&quot;Compile [Auto replace config] : read lanch_config error ! e=&quot;</span> + e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 读取manifest.json, 采用当前渲染server_config 替换掉manifest.json 中的对应字段</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> manifestPath = path.join(__dirname, <span class="string">&#x27;./manifest.json&#x27;</span>);</span><br><span class="line">	<span class="keyword">const</span> data = fs.readFileSync(manifestPath, <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line">	<span class="keyword">let</span> manifest = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config] : manifest &quot;</span> + <span class="string">`appid[<span class="subst">$&#123;manifest[<span class="string">&quot;mp-weixin&quot;</span>][<span class="string">&#x27;appid&#x27;</span>]&#125;</span>-&gt;<span class="subst">$&#123;serverConfig[<span class="string">&#x27;appid&#x27;</span>]&#125;</span>]`</span>);</span><br><span class="line">	manifest[<span class="string">&quot;mp-weixin&quot;</span>][<span class="string">&#x27;appid&#x27;</span>] = serverConfig[<span class="string">&#x27;appid&#x27;</span>];</span><br><span class="line"></span><br><span class="line">	fs.writeFileSync(manifestPath, <span class="built_in">JSON</span>.stringify(manifest, <span class="literal">null</span>, <span class="number">4</span>));</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">	<span class="built_in">console</span>.error(<span class="string">&quot;Compile [Auto replace config] : read manifest error ! e=&quot;</span> + e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Compile [Auto replace config]: Complete !&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;------------------------------------------&quot;</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最后：运行即可，可以看到以下appid 已替换</p>
-<p>  <img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513223413.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210513223413.png"></p>
-</li>
+<h2 id="方案一：利用rich-text的v-html属性"><a href="#方案一：利用rich-text的v-html属性" class="headerlink" title="方案一：利用rich-text的v-html属性"></a>方案一：利用rich-text的v-html属性</h2><hr>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">v-html</span>=<span class="string">&quot;text&quot;</span> <span class="attr">:style</span>=<span class="string">&quot;&#123;color: &#x27;#818181&#x27;&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	data()&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			text:<span class="string">`您当前有&lt;span style=&quot;color:#E2434A;font-weight:bold;&quot;&gt; 3 &lt;/span&gt;个客户`</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="方案二：利用rich-text的nodes参数"><a href="#方案二：利用rich-text的nodes参数" class="headerlink" title="方案二：利用rich-text的nodes参数"></a>方案二：利用rich-text的nodes参数</h2><hr>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">:nodes</span>=<span class="string">&quot;nodes&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	data() &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			nodes: [</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;&#x27;</span></span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;span&#x27;</span>,</span><br><span class="line">					attrs: &#123;</span><br><span class="line">						style: <span class="string">&#x27;font-size: 12px; color: #818181;&#x27;</span></span><br><span class="line">					&#125;,</span><br><span class="line">					children: [</span><br><span class="line">						&#123;</span><br><span class="line">							type: <span class="string">&#x27;text&#x27;</span>,</span><br><span class="line">							text: <span class="string">&#x27;您当前有&#x27;</span></span><br><span class="line">						&#125;</span><br><span class="line">					]</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;span&#x27;</span>,</span><br><span class="line">					attrs: &#123;</span><br><span class="line">						style: <span class="string">&#x27;font-size: 12px; color: red;&#x27;</span></span><br><span class="line">					&#125;,</span><br><span class="line">					children: [</span><br><span class="line">						&#123;</span><br><span class="line">							type: <span class="string">&#x27;text&#x27;</span>,</span><br><span class="line">							text: <span class="string">&#x27;3&#x27;</span></span><br><span class="line">						&#125;</span><br><span class="line">					]</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;span&#x27;</span>,</span><br><span class="line">					attrs: &#123;</span><br><span class="line">						style: <span class="string">&#x27;font-size: 12px; color: #818181;&#x27;</span></span><br><span class="line">					&#125;,</span><br><span class="line">					children: [</span><br><span class="line">						&#123;</span><br><span class="line">							type: <span class="string">&#x27;text&#x27;</span>,</span><br><span class="line">							text: <span class="string">&#x27;个客户&#x27;</span></span><br><span class="line">						&#125;</span><br><span class="line">					]</span><br><span class="line">				&#125;</span><br><span class="line">			]</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>使用rich-text外面需套一层view，否则会出现不显示或不生效问题</li>
 </ul>
 <hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://ask.dcloud.net.cn/article/35772">富文本/渲染/显示/图文混排方案。rich-text、uparse、v-html的区别</a></li>
+<li><a href="https://uniapp.dcloud.io/component/rich-text">rich-text 文档</a></li>
+</ul>
 <blockquote>
 <p>以上：如发现有问题，欢迎留言指出，我及时更正</p>
 </blockquote>
 ]]></content>
       <categories>
         <category>uniapp 入门实战</category>
+      </categories>
+      <tags>
+        <tag>rich-text</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>uni-app 如何引入Iconfont阿里巴巴矢量图标库</title>
+    <url>/2020/12/17/UniApp01/</url>
+    <content><![CDATA[<h3 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下:"></a>步骤如下:</h3><ol>
+<li>下载图标项目, 解压后效果如下<br><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/20201113164039.png" alt=""></li>
+<li><p>修改iconfont.css文件</p>
+<p> 修改前格式：</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@font-face &#123;font-family: &quot;iconfont&quot;;</span><br><span class="line">src: url(&#39;iconfont.eot?t&#x3D;1605254910083&#39;); &#x2F;* IE9 *&#x2F;</span><br><span class="line">src: url(&#39;iconfont.eot?t&#x3D;1605254910083#iefix&#39;) format(&#39;embedded-opentype&#39;), &#x2F;* IE6-IE8 *&#x2F;</span><br><span class="line">url(&#39;data:application&#x2F;x-font-woff2;charset&#x3D;utf-8;base64,转换的base64内容&#39;) format(&#39;woff2&#39;),</span><br><span class="line">url(&#39;iconfont.woff?t&#x3D;1605254910083&#39;) format(&#39;woff&#39;),</span><br><span class="line">url(&#39;iconfont.ttf?t&#x3D;1605254910083&#39;) format(&#39;truetype&#39;), &#x2F;* chrome, firefox, opera, Safari, Android, iOS 4.2+ *&#x2F;</span><br><span class="line">url(&#39;iconfont.svg?t&#x3D;1605254910083#iconfont&#39;) format(&#39;svg&#39;); &#x2F;* iOS 4.1- *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 修改后格式: </p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">    font-family: &quot;iconfont&quot;;</span><br><span class="line">    src: url(&#39;data:application&#x2F;x-font-woff2;charset&#x3D;utf-8;base64,转换的base64内容&#39;) format(&#39;woff2&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Copy字体文件iconfont.ttf和样式文件iconfont.css 至UniApp项目static/font目录中</li>
+</ol>
+<hr>
+<blockquote>
+<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>前端</category>
       </categories>
       <tags>
         <tag>UniApp</tag>
@@ -1005,96 +1042,6 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue3.x + Vite2.x 入门实战 06：Keep-alive 动态配置include实现页面缓存</title>
-    <url>/2021/07/17/Vue3.x_Vite2.x-06/</url>
-    <content><![CDATA[<h2 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h2><ul>
-<li>实现步骤<ul>
-<li>第一步：利用store状态管理缓存页面</li>
-<li>第二步：布局layout组件添加router-view相关配置</li>
-<li>第三步：在需要缓存的页面，添加路由守卫</li>
-</ul>
-</li>
-<li>总结</li>
-</ul>
-<a id="more"></a>
-<hr>
-<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><hr>
-<ul>
-<li><p>第一步：利用store状态管理缓存页面</p>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; src&#x2F;store&#x2F;modules&#x2F;KeepAlive.ts</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">const keepAliveModule &#x3D; &#123;</span><br><span class="line">    namespaced: true,</span><br><span class="line">    state: &#123;</span><br><span class="line">        caches: [],</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        ADD(state, name) &#123;</span><br><span class="line">            if (state.caches.indexOf(name) &lt; 0) &#123;</span><br><span class="line">                state.caches.push(name)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        REMOVE(state, name) &#123;</span><br><span class="line">            state.caches &#x3D; state.caches.filter(item &#x3D;&gt; item !&#x3D; name);</span><br><span class="line">        &#125;,</span><br><span class="line">        CLEAN(state) &#123;</span><br><span class="line">            state.caches &#x3D; [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">export default keepAliveModule;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; src&#x2F;store&#x2F;index.ts</span><br><span class="line">import &#123; createStore &#125; from &#39;vuex&#39;</span><br><span class="line">import keepAliveModule from &#39;.&#x2F;modules&#x2F;KeepAlive&#39;;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">const store &#x3D; createStore(&#123;</span><br><span class="line">    modules: &#123;</span><br><span class="line">        keepAlive: keepAliveModule</span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        keepAlive: (state) &#x3D;&gt; (state as any).keepAlive,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">export default store;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>第二步：布局layout组件添加router-view相关配置</p>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;MainWrapper&quot;&gt;</span><br><span class="line">	      &lt;router-view v-slot&#x3D;&quot;&#123; Component &#125;&quot;&gt;</span><br><span class="line">	        &lt;transition&gt;</span><br><span class="line">	          &lt;keep-alive :include&#x3D;&quot;$store.state.keepAlive.caches&quot;&gt;</span><br><span class="line">	            &lt;component :is&#x3D;&quot;Component&quot; &#x2F;&gt;</span><br><span class="line">	          &lt;&#x2F;keep-alive&gt;</span><br><span class="line">	        &lt;&#x2F;transition&gt;</span><br><span class="line">	    &lt;&#x2F;router-view&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>第三步：在需要缓存的页面，添加路由守卫</p>
-<ul>
-<li>beforeRouteEnter：添加缓存页面</li>
-<li>beforeRouteLeave：删除缓存页面</li>
-<li><p>提示：控制逻辑放置一块，方便管理</p>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;src&#x2F;views&#x2F;variety.vue</span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  name: &quot;variety&quot;,</span><br><span class="line">  components: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  setup(props, context) &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteEnter(to, from, next) &#123;</span><br><span class="line">    if (to.path &#x3D;&#x3D; &quot;&#x2F;product&#x2F;variety&quot;) &#123;</span><br><span class="line">      store.commit(&quot;keepAlive&#x2F;ADD&quot;, to.name);</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteLeave(to, from, next) &#123;</span><br><span class="line">    if (to.name !&#x3D; &quot;pic-editor&quot;) &#123;</span><br><span class="line">      store.commit(&quot;keepAlive&#x2F;REMOVE&quot;, from.name);</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>特别提醒：keep-alive :include 使用的是页面组件name，所以一定要记得给页面组件命名</li>
-</ul>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li><a href="https://hooray.github.io/posts/5dc60183/">使用 keep-alive 的 include 属性实现 Vue 页面缓存</a></li>
-</ul>
-<hr>
-<blockquote>
-<p>以上：如发现有问题，欢迎留言指出，我及时更正</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Vue3.x + Vite2.x 入门实战</category>
-      </categories>
-      <tags>
-        <tag>页面缓存</tag>
-        <tag>Keep-alive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>uniapp 入门实战 03：富文本显示</title>
-    <url>/2021/07/17/UniApp03/</url>
-    <content><![CDATA[<h2 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h2><ul>
-<li>需求效果</li>
-<li>解决方案一：利用rich-text的v-html属性</li>
-<li>解决方案二：利用rich-text的nodes参数</li>
-</ul>
-<h2 id="实现效果："><a href="#实现效果：" class="headerlink" title="实现效果："></a>实现效果：</h2><p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210602132458.png" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master//img/20210602132458.png"></p>
-<p>这行文字包含3部分，前：“您当前有”，中：“3”，后：“个客户”，最直接的方案就是用三个view标签搞定。我想万一有很多段需要特殊突显显示怎么办法？这种直接办法就不可取了，所以去官网了解富文本组件。</p>
-<hr>
-<a id="more"></a>
-<h2 id="方案一：利用rich-text的v-html属性"><a href="#方案一：利用rich-text的v-html属性" class="headerlink" title="方案一：利用rich-text的v-html属性"></a>方案一：利用rich-text的v-html属性</h2><hr>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">v-html</span>=<span class="string">&quot;text&quot;</span> <span class="attr">:style</span>=<span class="string">&quot;&#123;color: &#x27;#818181&#x27;&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	data()&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			text:<span class="string">`您当前有&lt;span style=&quot;color:#E2434A;font-weight:bold;&quot;&gt; 3 &lt;/span&gt;个客户`</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="方案二：利用rich-text的nodes参数"><a href="#方案二：利用rich-text的nodes参数" class="headerlink" title="方案二：利用rich-text的nodes参数"></a>方案二：利用rich-text的nodes参数</h2><hr>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">rich-text</span> <span class="attr">:nodes</span>=<span class="string">&quot;nodes&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rich-text</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	data() &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			nodes: [</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;&#x27;</span></span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;span&#x27;</span>,</span><br><span class="line">					attrs: &#123;</span><br><span class="line">						style: <span class="string">&#x27;font-size: 12px; color: #818181;&#x27;</span></span><br><span class="line">					&#125;,</span><br><span class="line">					children: [</span><br><span class="line">						&#123;</span><br><span class="line">							type: <span class="string">&#x27;text&#x27;</span>,</span><br><span class="line">							text: <span class="string">&#x27;您当前有&#x27;</span></span><br><span class="line">						&#125;</span><br><span class="line">					]</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;span&#x27;</span>,</span><br><span class="line">					attrs: &#123;</span><br><span class="line">						style: <span class="string">&#x27;font-size: 12px; color: red;&#x27;</span></span><br><span class="line">					&#125;,</span><br><span class="line">					children: [</span><br><span class="line">						&#123;</span><br><span class="line">							type: <span class="string">&#x27;text&#x27;</span>,</span><br><span class="line">							text: <span class="string">&#x27;3&#x27;</span></span><br><span class="line">						&#125;</span><br><span class="line">					]</span><br><span class="line">				&#125;,</span><br><span class="line">				&#123;</span><br><span class="line">					name: <span class="string">&#x27;span&#x27;</span>,</span><br><span class="line">					attrs: &#123;</span><br><span class="line">						style: <span class="string">&#x27;font-size: 12px; color: #818181;&#x27;</span></span><br><span class="line">					&#125;,</span><br><span class="line">					children: [</span><br><span class="line">						&#123;</span><br><span class="line">							type: <span class="string">&#x27;text&#x27;</span>,</span><br><span class="line">							text: <span class="string">&#x27;个客户&#x27;</span></span><br><span class="line">						&#125;</span><br><span class="line">					]</span><br><span class="line">				&#125;</span><br><span class="line">			]</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>使用rich-text外面需套一层view，否则会出现不显示或不生效问题</li>
-</ul>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li><a href="https://ask.dcloud.net.cn/article/35772">富文本/渲染/显示/图文混排方案。rich-text、uparse、v-html的区别</a></li>
-<li><a href="https://uniapp.dcloud.io/component/rich-text">rich-text 文档</a></li>
-</ul>
-<blockquote>
-<p>以上：如发现有问题，欢迎留言指出，我及时更正</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>uniapp 入门实战</category>
-      </categories>
-      <tags>
-        <tag>rich-text</tag>
       </tags>
   </entry>
   <entry>
@@ -1299,6 +1246,59 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue3.x + Vite2.x 入门实战 06：Keep-alive 动态配置include实现页面缓存</title>
+    <url>/2021/07/17/Vue3.x_Vite2.x-06/</url>
+    <content><![CDATA[<h2 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h2><ul>
+<li>实现步骤<ul>
+<li>第一步：利用store状态管理缓存页面</li>
+<li>第二步：布局layout组件添加router-view相关配置</li>
+<li>第三步：在需要缓存的页面，添加路由守卫</li>
+</ul>
+</li>
+<li>总结</li>
+</ul>
+<a id="more"></a>
+<hr>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><hr>
+<ul>
+<li><p>第一步：利用store状态管理缓存页面</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; src&#x2F;store&#x2F;modules&#x2F;KeepAlive.ts</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">const keepAliveModule &#x3D; &#123;</span><br><span class="line">    namespaced: true,</span><br><span class="line">    state: &#123;</span><br><span class="line">        caches: [],</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        ADD(state, name) &#123;</span><br><span class="line">            if (state.caches.indexOf(name) &lt; 0) &#123;</span><br><span class="line">                state.caches.push(name)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        REMOVE(state, name) &#123;</span><br><span class="line">            state.caches &#x3D; state.caches.filter(item &#x3D;&gt; item !&#x3D; name);</span><br><span class="line">        &#125;,</span><br><span class="line">        CLEAN(state) &#123;</span><br><span class="line">            state.caches &#x3D; [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">export default keepAliveModule;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; src&#x2F;store&#x2F;index.ts</span><br><span class="line">import &#123; createStore &#125; from &#39;vuex&#39;</span><br><span class="line">import keepAliveModule from &#39;.&#x2F;modules&#x2F;KeepAlive&#39;;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">const store &#x3D; createStore(&#123;</span><br><span class="line">    modules: &#123;</span><br><span class="line">        keepAlive: keepAliveModule</span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        keepAlive: (state) &#x3D;&gt; (state as any).keepAlive,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br><span class="line">export default store;</span><br><span class="line">&#x2F;&#x2F;-------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二步：布局layout组件添加router-view相关配置</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;MainWrapper&quot;&gt;</span><br><span class="line">	      &lt;router-view v-slot&#x3D;&quot;&#123; Component &#125;&quot;&gt;</span><br><span class="line">	        &lt;transition&gt;</span><br><span class="line">	          &lt;keep-alive :include&#x3D;&quot;$store.state.keepAlive.caches&quot;&gt;</span><br><span class="line">	            &lt;component :is&#x3D;&quot;Component&quot; &#x2F;&gt;</span><br><span class="line">	          &lt;&#x2F;keep-alive&gt;</span><br><span class="line">	        &lt;&#x2F;transition&gt;</span><br><span class="line">	    &lt;&#x2F;router-view&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三步：在需要缓存的页面，添加路由守卫</p>
+<ul>
+<li>beforeRouteEnter：添加缓存页面</li>
+<li>beforeRouteLeave：删除缓存页面</li>
+<li><p>提示：控制逻辑放置一块，方便管理</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;src&#x2F;views&#x2F;variety.vue</span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  name: &quot;variety&quot;,</span><br><span class="line">  components: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  setup(props, context) &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteEnter(to, from, next) &#123;</span><br><span class="line">    if (to.path &#x3D;&#x3D; &quot;&#x2F;product&#x2F;variety&quot;) &#123;</span><br><span class="line">      store.commit(&quot;keepAlive&#x2F;ADD&quot;, to.name);</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteLeave(to, from, next) &#123;</span><br><span class="line">    if (to.name !&#x3D; &quot;pic-editor&quot;) &#123;</span><br><span class="line">      store.commit(&quot;keepAlive&#x2F;REMOVE&quot;, from.name);</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>特别提醒：keep-alive :include 使用的是页面组件name，所以一定要记得给页面组件命名</li>
+</ul>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://hooray.github.io/posts/5dc60183/">使用 keep-alive 的 include 属性实现 Vue 页面缓存</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>以上：如发现有问题，欢迎留言指出，我及时更正</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Vue3.x + Vite2.x 入门实战</category>
+      </categories>
+      <tags>
+        <tag>页面缓存</tag>
+        <tag>Keep-alive</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Web代码混淆</title>
     <url>/2021/01/03/Web02/</url>
     <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
@@ -1460,84 +1460,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Web构建优化</title>
-    <url>/2021/01/03/WebBuild01/</url>
-    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
-<li>DllPlugin 和 DllReferencePlugin 简介</li>
-<li>如何使用DllPlugin打包，及DllReferencePlugin如何引用dll</li>
-<li>构建优化效果</li>
-<li>SplitChunks </li>
-<li>Demo源码工程</li>
-</ul>
-<a id="more"></a>
-<hr>
-<h3 id="DllPlugin-和-DllReferencePlugin-简介"><a href="#DllPlugin-和-DllReferencePlugin-简介" class="headerlink" title="DllPlugin 和 DllReferencePlugin 简介"></a>DllPlugin 和 DllReferencePlugin 简介</h3><ul>
-<li>DllPlugin: <blockquote>
-<p>这个插件是在一个额外的独立的 webpack 设置中创建一个只有 dll 的 bundle(dll-only-bundle)。 这个插件会生成一个名为 manifest.json 的文件，这个文件是用来让 DLLReferencePlugin 映射到相关的依赖上去的。</p>
-</blockquote>
-</li>
-<li>DllReferencePlugin:<blockquote>
-<p>此插件配置在 webpack 的主配置文件中，此插件会把 dll-only-bundles 引用到需要的预编译的依赖中</p>
-</blockquote>
-</li>
-<li>通俗点讲：<blockquote>
-<p>DllPlugin 插件负责把第三方公共库，打包进一个独立的dll库中。最后项目打包时DllReferencePlugin 通过manifest.json 来引用dll的公共库，避免项目每次构建时都将第三库和业务代码进行重复打包。</p>
-</blockquote>
-</li>
-<li>优点：<ul>
-<li>提升打包构建速度</li>
-<li>公共js文件配置CDN，避免掉重复下载公共库js文件</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="如何使用DllPlugin打包，及DllReferencePlugin如何引用dll"><a href="#如何使用DllPlugin打包，及DllReferencePlugin如何引用dll" class="headerlink" title="如何使用DllPlugin打包，及DllReferencePlugin如何引用dll"></a>如何使用DllPlugin打包，及DllReferencePlugin如何引用dll</h3><ul>
-<li>DllPlugin 配置需要打包第三方库至dll中</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;webpack.dll.config.js</span><br><span class="line"></span><br><span class="line">const DllPlugin &#x3D; require(&#39;webpack&#x2F;lib&#x2F;DllPlugin&#39;);</span><br><span class="line">const path &#x3D; require(&#39;path&#39;)</span><br><span class="line">const fs &#x3D; require(&#39;fs&#39;);</span><br><span class="line"></span><br><span class="line">var packageJsonContent &#x3D; fs.readFileSync(path.resolve(__dirname, &#39;..&#x2F;package.json&#39;));</span><br><span class="line">var packageJson &#x3D; JSON.parse(packageJsonContent);</span><br><span class="line"></span><br><span class="line">var dependencies &#x3D; Object.keys(packageJson.dependencies);</span><br><span class="line"></span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        vendor: dependencies</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, &#39;..&#x2F;dist&#39;),</span><br><span class="line">        filename: &#39;vendor.bundle.js&#39;,</span><br><span class="line">        library: &#39;vendor_lib&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        new DllPlugin(&#123;</span><br><span class="line">            context: __dirname,</span><br><span class="line">            name: &#39;vendor_lib&#39;,</span><br><span class="line">            &#x2F;* 生成manifest文件输出的位置和文件名称 *&#x2F;</span><br><span class="line">            path: path.resolve(__dirname, &#39;..&#x2F;dist&#x2F;vendor-manifest.json&#39;)</span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>DllReferencePlugin如何引用dll</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;webpack.config.js 中 plugins添加以下代码</span><br><span class="line"></span><br><span class="line">new DllReferencePlugin(&#123;</span><br><span class="line">            manifest: require(path.resolve(__dirname, &#39;..&#x2F;dist&#x2F;vendor-manifest.json&#39;))</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="构建优化效果"><a href="#构建优化效果" class="headerlink" title="构建优化效果"></a>构建优化效果</h3><blockquote>
-<p>简单demo，未抽离公共库打包时间7572ms，抽离公共库打包时间2315ms，打包速度快2倍多<br><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master//img/20201230131323.png" alt=""></p>
-</blockquote>
-<hr>
-<h3 id="SplitChunks"><a href="#SplitChunks" class="headerlink" title="SplitChunks"></a>SplitChunks</h3><ul>
-<li>简介：Webpack中一个提取或分离代码的插件，主要作用是提取公共代码，防止代码被重复打包，拆分过大的js文件，合并零散的js文件，可配置</li>
-<li>配置：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;webpack.dll.config.js中optimization 中新增如下配置</span><br><span class="line">splitChunks: &#123;</span><br><span class="line">            chunks: &quot;async&quot;,</span><br><span class="line">            minSize: 30000,</span><br><span class="line">            minChunks: 1,</span><br><span class="line">            maxAsyncRequests: 5,</span><br><span class="line">            maxInitialRequests: 3,</span><br><span class="line">            automaticNameDelimiter: &#39;~&#39;,</span><br><span class="line">            name: true,</span><br><span class="line">            cacheGroups: &#123;</span><br><span class="line">                vendors: &#123;</span><br><span class="line">                    test: &#x2F;[\\&#x2F;]node_modules[\\&#x2F;]&#x2F;,</span><br><span class="line">                    priority: -10</span><br><span class="line">                &#125;,</span><br><span class="line">                default: &#123;</span><br><span class="line">                    minChunks: 2,</span><br><span class="line">                    priority: -20,</span><br><span class="line">                    reuseExistingChunk: true</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Demo源码工程"><a href="#Demo源码工程" class="headerlink" title="Demo源码工程"></a>Demo源码工程</h3><ul>
-<li>访问地址：<a href="https://github.com/aa4790139/webpack4_confuse_demo">https://github.com/aa4790139/webpack4_confuse_demo</a></li>
-</ul>
-<hr>
-<h3 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h3><blockquote>
-<p>由于对于公共库抽离和分割包过大优化打包，我只是试探性的去了解和测试。如果你还有什么更好的优化构建方法或者建议，欢迎给我留言。感谢~</p>
-</blockquote>
-<hr>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
-<li><a href="https://www.cnblogs.com/tugenhua0707/p/9520780.html">深入浅出的webpack构建工具—-DllPlugin DllReferencePlugin提高构建速度(七)</a></li>
-<li><a href="https://webpack.docschina.org/plugins/split-chunks-plugin/#optimizationsplitchunks">SplitChunksPlugin 使用说明</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/152097785">Webpack之SplitChunks插件用法详解</a></li>
-<li><a href="https://imweb.io/topic/5b66dd601402769b60847149">webpack 4 Code Splitting 的 splitChunks 配置探索</a></li>
-</ul>
-<blockquote>
-<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>webpack</category>
-      </categories>
-      <tags>
-        <tag>DllPlugin</tag>
-        <tag>DllReferencePlugin</tag>
-        <tag>打包优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>响应式根基：Object.defineProperty 与 Proxy 拦截区别</title>
     <url>/2021/07/17/principle-learn-01/</url>
     <content><![CDATA[<h2 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h2><ul>
@@ -1685,6 +1607,146 @@
       <tags>
         <tag>Object.defineProperty</tag>
         <tag>Proxy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>响应式核心原理</title>
+    <url>/2021/07/27/principle-learn-02/</url>
+    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
+<li>核心原理：流转图</li>
+<li>流转步骤：讲解&amp;疑问解答</li>
+</ul>
+<hr>
+<blockquote>
+<p>由于Vue3 Reactive源码涉及的代码较多，给初学者学习带来一定的门槛，所以尤大讲解的最核心的响应式demo来讲解响应式核心原理实现</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="核心原理-流转图"><a href="#核心原理-流转图" class="headerlink" title="核心原理-流转图"></a>核心原理-流转图</h2><hr>
+<p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master/img/20210726223603.jpg" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master/img/20210726223603.jpg"></p>
+<h3 id="流转步骤讲解"><a href="#流转步骤讲解" class="headerlink" title="流转步骤讲解"></a>流转步骤讲解</h3><ul>
+<li>第1步：利用Proxy 封装代理响应式对象</li>
+<li>第2步：巧妙利用Javascript是单线程执行特性，用watchEffect包装一层调用，让activeUpdate暂存匿名函数。</li>
+<li>第3步：执行匿名函数，让匿名函数访问到的对象属性，触发对象的get 拦截</li>
+<li>第4、5、6步：get拦截到的属性访问，创建依赖跟踪对象dep，然后利用dep搜集依赖匿名函数</li>
+<li>第7、8步：set拦截到属性设置，获取属性对应的依赖对象dep，然后调用之前搜集的依赖匿名函数</li>
+</ul>
+<hr>
+<h3 id="疑问解答："><a href="#疑问解答：" class="headerlink" title="疑问解答："></a>疑问解答：</h3><ul>
+<li>为啥要用proxy拦截? ( 请阅读：<a href="https://yanxuewen.cn/2021/07/17/principle-learn-01/">响应式根基：Object.defineProperty 与 Proxy 拦截区别</a> )</li>
+<li>为啥要用WeakMap？<ul>
+<li>原因：可被垃圾回收器自动回收，而Map不会被垃圾回收器自动回收，需要手动清理。否则会造成内存泄漏</li>
+</ul>
+</li>
+<li>为啥要用Reflect获取对象属性和设置对象属性？<ul>
+<li>原因1：保证不管存不存在原型链继承，都能保存操作正确。</li>
+<li>原因2：语义更明确，避免异常抛出等</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>watchEffect : 暂存当前匿名函数</li>
+<li>proxy：对象访问拦截</li>
+<li>dep：依赖收集</li>
+</ul>
+<blockquote>
+<p>demo 源码：<a href="https://github.com/yxw007/vue-principle-learn/blob/master/vue-3-min/reactivity/reactivity.html">vue-principle-learn</a></p>
+<p>为了方便记牢响应式原理，请记住这3个角色，以便快速回忆起响应式原理。</p>
+</blockquote>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><a href="https://www.bilibili.com/video/BV1rC4y187Vw">【课程】Vue 3 Deep Dive with Evan You 【中英字幕】- Vue Mastery</a></li>
+</ul>
+<blockquote>
+<p>以上：如发现有问题，欢迎留言指出，我及时更正</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>响应式原理</category>
+      </categories>
+      <tags>
+        <tag>Proxy</tag>
+        <tag>watchEffect</tag>
+        <tag>dep</tag>
+        <tag>Reflect</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web构建优化</title>
+    <url>/2021/01/03/WebBuild01/</url>
+    <content><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
+<li>DllPlugin 和 DllReferencePlugin 简介</li>
+<li>如何使用DllPlugin打包，及DllReferencePlugin如何引用dll</li>
+<li>构建优化效果</li>
+<li>SplitChunks </li>
+<li>Demo源码工程</li>
+</ul>
+<a id="more"></a>
+<hr>
+<h3 id="DllPlugin-和-DllReferencePlugin-简介"><a href="#DllPlugin-和-DllReferencePlugin-简介" class="headerlink" title="DllPlugin 和 DllReferencePlugin 简介"></a>DllPlugin 和 DllReferencePlugin 简介</h3><ul>
+<li>DllPlugin: <blockquote>
+<p>这个插件是在一个额外的独立的 webpack 设置中创建一个只有 dll 的 bundle(dll-only-bundle)。 这个插件会生成一个名为 manifest.json 的文件，这个文件是用来让 DLLReferencePlugin 映射到相关的依赖上去的。</p>
+</blockquote>
+</li>
+<li>DllReferencePlugin:<blockquote>
+<p>此插件配置在 webpack 的主配置文件中，此插件会把 dll-only-bundles 引用到需要的预编译的依赖中</p>
+</blockquote>
+</li>
+<li>通俗点讲：<blockquote>
+<p>DllPlugin 插件负责把第三方公共库，打包进一个独立的dll库中。最后项目打包时DllReferencePlugin 通过manifest.json 来引用dll的公共库，避免项目每次构建时都将第三库和业务代码进行重复打包。</p>
+</blockquote>
+</li>
+<li>优点：<ul>
+<li>提升打包构建速度</li>
+<li>公共js文件配置CDN，避免掉重复下载公共库js文件</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="如何使用DllPlugin打包，及DllReferencePlugin如何引用dll"><a href="#如何使用DllPlugin打包，及DllReferencePlugin如何引用dll" class="headerlink" title="如何使用DllPlugin打包，及DllReferencePlugin如何引用dll"></a>如何使用DllPlugin打包，及DllReferencePlugin如何引用dll</h3><ul>
+<li>DllPlugin 配置需要打包第三方库至dll中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;webpack.dll.config.js</span><br><span class="line"></span><br><span class="line">const DllPlugin &#x3D; require(&#39;webpack&#x2F;lib&#x2F;DllPlugin&#39;);</span><br><span class="line">const path &#x3D; require(&#39;path&#39;)</span><br><span class="line">const fs &#x3D; require(&#39;fs&#39;);</span><br><span class="line"></span><br><span class="line">var packageJsonContent &#x3D; fs.readFileSync(path.resolve(__dirname, &#39;..&#x2F;package.json&#39;));</span><br><span class="line">var packageJson &#x3D; JSON.parse(packageJsonContent);</span><br><span class="line"></span><br><span class="line">var dependencies &#x3D; Object.keys(packageJson.dependencies);</span><br><span class="line"></span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        vendor: dependencies</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, &#39;..&#x2F;dist&#39;),</span><br><span class="line">        filename: &#39;vendor.bundle.js&#39;,</span><br><span class="line">        library: &#39;vendor_lib&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        new DllPlugin(&#123;</span><br><span class="line">            context: __dirname,</span><br><span class="line">            name: &#39;vendor_lib&#39;,</span><br><span class="line">            &#x2F;* 生成manifest文件输出的位置和文件名称 *&#x2F;</span><br><span class="line">            path: path.resolve(__dirname, &#39;..&#x2F;dist&#x2F;vendor-manifest.json&#39;)</span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>DllReferencePlugin如何引用dll</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;webpack.config.js 中 plugins添加以下代码</span><br><span class="line"></span><br><span class="line">new DllReferencePlugin(&#123;</span><br><span class="line">            manifest: require(path.resolve(__dirname, &#39;..&#x2F;dist&#x2F;vendor-manifest.json&#39;))</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="构建优化效果"><a href="#构建优化效果" class="headerlink" title="构建优化效果"></a>构建优化效果</h3><blockquote>
+<p>简单demo，未抽离公共库打包时间7572ms，抽离公共库打包时间2315ms，打包速度快2倍多<br><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master//img/20201230131323.png" alt=""></p>
+</blockquote>
+<hr>
+<h3 id="SplitChunks"><a href="#SplitChunks" class="headerlink" title="SplitChunks"></a>SplitChunks</h3><ul>
+<li>简介：Webpack中一个提取或分离代码的插件，主要作用是提取公共代码，防止代码被重复打包，拆分过大的js文件，合并零散的js文件，可配置</li>
+<li>配置：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;webpack.dll.config.js中optimization 中新增如下配置</span><br><span class="line">splitChunks: &#123;</span><br><span class="line">            chunks: &quot;async&quot;,</span><br><span class="line">            minSize: 30000,</span><br><span class="line">            minChunks: 1,</span><br><span class="line">            maxAsyncRequests: 5,</span><br><span class="line">            maxInitialRequests: 3,</span><br><span class="line">            automaticNameDelimiter: &#39;~&#39;,</span><br><span class="line">            name: true,</span><br><span class="line">            cacheGroups: &#123;</span><br><span class="line">                vendors: &#123;</span><br><span class="line">                    test: &#x2F;[\\&#x2F;]node_modules[\\&#x2F;]&#x2F;,</span><br><span class="line">                    priority: -10</span><br><span class="line">                &#125;,</span><br><span class="line">                default: &#123;</span><br><span class="line">                    minChunks: 2,</span><br><span class="line">                    priority: -20,</span><br><span class="line">                    reuseExistingChunk: true</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Demo源码工程"><a href="#Demo源码工程" class="headerlink" title="Demo源码工程"></a>Demo源码工程</h3><ul>
+<li>访问地址：<a href="https://github.com/aa4790139/webpack4_confuse_demo">https://github.com/aa4790139/webpack4_confuse_demo</a></li>
+</ul>
+<hr>
+<h3 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h3><blockquote>
+<p>由于对于公共库抽离和分割包过大优化打包，我只是试探性的去了解和测试。如果你还有什么更好的优化构建方法或者建议，欢迎给我留言。感谢~</p>
+</blockquote>
+<hr>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li><a href="https://www.cnblogs.com/tugenhua0707/p/9520780.html">深入浅出的webpack构建工具—-DllPlugin DllReferencePlugin提高构建速度(七)</a></li>
+<li><a href="https://webpack.docschina.org/plugins/split-chunks-plugin/#optimizationsplitchunks">SplitChunksPlugin 使用说明</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/152097785">Webpack之SplitChunks插件用法详解</a></li>
+<li><a href="https://imweb.io/topic/5b66dd601402769b60847149">webpack 4 Code Splitting 的 splitChunks 配置探索</a></li>
+</ul>
+<blockquote>
+<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>DllPlugin</tag>
+        <tag>DllReferencePlugin</tag>
+        <tag>打包优化</tag>
       </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="https://yanxuewen.cn/atom.xml" rel="self"/>
   
   <link href="https://yanxuewen.cn/"/>
-  <updated>2021-07-17T11:31:56.664Z</updated>
+  <updated>2021-07-27T15:20:40.927Z</updated>
   <id>https://yanxuewen.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>响应式核心原理</title>
+    <link href="https://yanxuewen.cn/2021/07/27/principle-learn-02/"/>
+    <id>https://yanxuewen.cn/2021/07/27/principle-learn-02/</id>
+    <published>2021-07-27T15:20:40.927Z</published>
+    <updated>2021-07-27T15:20:40.927Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul><li>核心原理：流转图</li><li>流转步骤：讲解&amp;疑问解答</li></ul><hr><blockquote><p>由于Vue3 Reactive源码涉及的代码较多，给初学者学习带来一定的门槛，所以尤大讲解的最核心的响应式demo来讲解响应式核心原理实现</p></blockquote><a id="more"></a><h2 id="核心原理-流转图"><a href="#核心原理-流转图" class="headerlink" title="核心原理-流转图"></a>核心原理-流转图</h2><hr><p><img data-src="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master/img/20210726223603.jpg" alt="https://cdn.jsdelivr.net/gh/yxw007/BlogPicBed@master/img/20210726223603.jpg"></p><h3 id="流转步骤讲解"><a href="#流转步骤讲解" class="headerlink" title="流转步骤讲解"></a>流转步骤讲解</h3><ul><li>第1步：利用Proxy 封装代理响应式对象</li><li>第2步：巧妙利用Javascript是单线程执行特性，用watchEffect包装一层调用，让activeUpdate暂存匿名函数。</li><li>第3步：执行匿名函数，让匿名函数访问到的对象属性，触发对象的get 拦截</li><li>第4、5、6步：get拦截到的属性访问，创建依赖跟踪对象dep，然后利用dep搜集依赖匿名函数</li><li>第7、8步：set拦截到属性设置，获取属性对应的依赖对象dep，然后调用之前搜集的依赖匿名函数</li></ul><hr><h3 id="疑问解答："><a href="#疑问解答：" class="headerlink" title="疑问解答："></a>疑问解答：</h3><ul><li>为啥要用proxy拦截? ( 请阅读：<a href="https://yanxuewen.cn/2021/07/17/principle-learn-01/">响应式根基：Object.defineProperty 与 Proxy 拦截区别</a> )</li><li>为啥要用WeakMap？<ul><li>原因：可被垃圾回收器自动回收，而Map不会被垃圾回收器自动回收，需要手动清理。否则会造成内存泄漏</li></ul></li><li>为啥要用Reflect获取对象属性和设置对象属性？<ul><li>原因1：保证不管存不存在原型链继承，都能保存操作正确。</li><li>原因2：语义更明确，避免异常抛出等</li></ul></li></ul><hr><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>watchEffect : 暂存当前匿名函数</li><li>proxy：对象访问拦截</li><li>dep：依赖收集</li></ul><blockquote><p>demo 源码：<a href="https://github.com/yxw007/vue-principle-learn/blob/master/vue-3-min/reactivity/reactivity.html">vue-principle-learn</a></p><p>为了方便记牢响应式原理，请记住这3个角色，以便快速回忆起响应式原理。</p></blockquote><hr><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://www.bilibili.com/video/BV1rC4y187Vw">【课程】Vue 3 Deep Dive with Evan You 【中英字幕】- Vue Mastery</a></li></ul><blockquote><p>以上：如发现有问题，欢迎留言指出，我及时更正</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;概要内容&quot;&gt;&lt;a href=&quot;#概要内容&quot; class=&quot;headerlink&quot; title=&quot;概要内容&quot;&gt;&lt;/a&gt;概要内容&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;核心原理：流转图&lt;/li&gt;
+&lt;li&gt;流转步骤：讲解&amp;amp;疑问解答&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于Vue3 Reactive源码涉及的代码较多，给初学者学习带来一定的门槛，所以尤大讲解的最核心的响应式demo来讲解响应式核心原理实现&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="响应式原理" scheme="https://yanxuewen.cn/categories/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="Proxy" scheme="https://yanxuewen.cn/tags/Proxy/"/>
+    
+    <category term="watchEffect" scheme="https://yanxuewen.cn/tags/watchEffect/"/>
+    
+    <category term="dep" scheme="https://yanxuewen.cn/tags/dep/"/>
+    
+    <category term="Reflect" scheme="https://yanxuewen.cn/tags/Reflect/"/>
+    
+  </entry>
   
   <entry>
     <title>响应式根基：Object.defineProperty 与 Proxy 拦截区别</title>
@@ -585,31 +619,6 @@
     
     
     <category term="Python" scheme="https://yanxuewen.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>屏蔽：键盘按键、鼠标点击事件</title>
-    <link href="https://yanxuewen.cn/2020/12/17/PreventEvent/"/>
-    <id>https://yanxuewen.cn/2020/12/17/PreventEvent/</id>
-    <published>2020-12-17T15:38:04.678Z</published>
-    <updated>2020-12-16T15:13:47.301Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul><li>屏蔽-键盘按键</li><li>屏蔽-鼠标点击</li><li>屏蔽-BackSpace</li></ul><a id="more"></a><h3 id="屏蔽-键盘按键"><a href="#屏蔽-键盘按键" class="headerlink" title="屏蔽-键盘按键"></a>屏蔽-键盘按键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;添加按键监听</span><br><span class="line">window.addEventListener(&#39;keydown&#39;, this.onKeyDown,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;移除按键监听</span><br><span class="line">window.removeEventListener(&quot;keydown&quot;,this.onKeyDown,true);</span><br><span class="line"></span><br><span class="line">onKeyDown(val)&#123;</span><br><span class="line">    console.log(&#39;按下&#39; + val.key);</span><br><span class="line">    val.preventDefault();</span><br><span class="line">    val.stopPropagation();</span><br><span class="line">    val.cancelBubble &#x3D; true;</span><br><span class="line">    window.event.returnValue &#x3D; false;</span><br><span class="line">    window.event.preventDefault();</span><br><span class="line">    window.event.stopPropagation();</span><br><span class="line">    window.event.cancelBubble &#x3D; true;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="屏蔽-鼠标点击"><a href="#屏蔽-鼠标点击" class="headerlink" title="屏蔽-鼠标点击"></a>屏蔽-鼠标点击</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;添加鼠标点击监听</span><br><span class="line">window.addEventListener(&#39;mousedown&#39;,this.onClick,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;移除鼠标点击监听</span><br><span class="line">window.removeEventListener(&#39;mousedown&#39;,this.onClick,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;which: 1-左键 2-中键 3-右键</span><br><span class="line">onClick(val)&#123;</span><br><span class="line">    console.error(&#39;点击&#39; + val.which);</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="屏蔽-BackSpace"><a href="#屏蔽-BackSpace" class="headerlink" title="屏蔽-BackSpace"></a>屏蔽-BackSpace</h3><p>在IE页面跳转过程中，按BackSpace退格键默认返回上此浏览页，导致路由中断引起(Vue)页面卡死，所以需要在IE中屏蔽掉BackSpce退格键，但是在输入框中则不屏蔽。</p><ul><li>preventBackSpce.js： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">export const banBackSpace &#x3D; (e) &#x3D;&gt; &#123;</span><br><span class="line">  let ev &#x3D; e || window.event</span><br><span class="line">  &#x2F;&#x2F; 各种浏览器下获取事件对象</span><br><span class="line">  let obj &#x3D; ev.relatedTarget || ev.srcElement || ev.target || ev.currentTarget</span><br><span class="line">  &#x2F;&#x2F; 按下Backspace键</span><br><span class="line">  if (ev.keyCode &#x3D;&#x3D;&#x3D; 8) &#123;</span><br><span class="line">    &#x2F;&#x2F; 标签名称</span><br><span class="line">    let tagName &#x3D; obj.nodeName.toLowerCase();</span><br><span class="line">    &#x2F;&#x2F; 如果标签不是input或者textarea则阻止Backspace</span><br><span class="line">    if (tagName !&#x3D;&#x3D; &#39;input&#39; &amp;&amp; tagName !&#x3D;&#x3D; &#39;textarea&#39;) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">    let tagType &#x3D; obj.type.toLowerCase() &#x2F;&#x2F; 标签类型</span><br><span class="line">    &#x2F;&#x2F; input标签除了下面几种类型，全部阻止Backspace</span><br><span class="line">    if (tagName &#x3D;&#x3D;&#x3D; &#39;input&#39; &amp;&amp; (tagType !&#x3D;&#x3D; &#39;text&#39; &amp;&amp; tagType !&#x3D;&#x3D; &#39;textarea&#39; &amp;&amp; tagType !&#x3D;&#x3D; &#39;password&#39;)) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; input或者textarea输入框如果不可编辑则阻止Backspace</span><br><span class="line">    if ((tagName &#x3D;&#x3D;&#x3D; &#39;input&#39; || tagName &#x3D;&#x3D;&#x3D; &#39;textarea&#39;) &amp;&amp; (obj.readOnly &#x3D;&#x3D;&#x3D; true || obj.disabled &#x3D;&#x3D;&#x3D; true)) &#123;</span><br><span class="line">      return stopIt(ev)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function stopIt(ev) &#123;</span><br><span class="line">  if (ev.preventDefault) &#123;</span><br><span class="line">    &#x2F;&#x2F; preventDefault()方法阻止元素发生默认的行为</span><br><span class="line">    ev.preventDefault()</span><br><span class="line">  &#125;</span><br><span class="line">  if (ev.returnValue) &#123;</span><br><span class="line">    &#x2F;&#x2F; IE浏览器下用window.event.returnValue &#x3D; false;实现阻止元素发生默认的行为</span><br><span class="line">  &#125;</span><br><span class="line">  return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>使用方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 在需要使用的Vue页面引入组件(一般在main.vue中添加)</span><br><span class="line">import &#123;banBackSpace&#125; from &quot;@&#x2F;util&#x2F;preventBackspace&quot;;</span><br><span class="line"></span><br><span class="line">2. mounted 钩子函数挂载事件</span><br><span class="line">document.onkeypress &#x3D; banBackSpace;</span><br><span class="line">document.onkeydown &#x3D; banBackSpace;</span><br></pre></td></tr></table></figure></li></ul><hr><blockquote><p>以上: 如发现有问题，欢迎留言指出，我及时更正</p></blockquote>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;概要内容&quot;&gt;&lt;a href=&quot;#概要内容&quot; class=&quot;headerlink&quot; title=&quot;概要内容&quot;&gt;&lt;/a&gt;概要内容&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;屏蔽-键盘按键&lt;/li&gt;
-&lt;li&gt;屏蔽-鼠标点击&lt;/li&gt;
-&lt;li&gt;屏蔽-BackSpace&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="H5" scheme="https://yanxuewen.cn/categories/H5/"/>
-    
-    
-    <category term="事件屏蔽" scheme="https://yanxuewen.cn/tags/%E4%BA%8B%E4%BB%B6%E5%B1%8F%E8%94%BD/"/>
     
   </entry>
   
