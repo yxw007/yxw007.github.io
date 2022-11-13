@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yanxuewen.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="概要内容 搭建步骤 安装环境 图床加速、集成Gitalk、集成Valine  绑定域名、版权配置、赞赏、站点加速等   搭建原因：几年前一直在CSDN写博客，经常用心写的文章，结果过一段时间文章关联的图片全部丢失，给他们反馈无果，图片丢失也找不回。后面就转用印象笔记，几年下来记录了不少笔记，但是发现还是缺少一个互动的环节，不知道自己写的笔记有没有问题，没法与他人发生碰撞。想快速产生好的想法或者更好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github + Hexo + Next 搭建个人博客网站">
+<meta property="og:url" content="https://yanxuewen.cn/2022/11/13/BuildBlog/index.html">
+<meta property="og:site_name" content="Potter&#39;s Blog">
+<meta property="og:description" content="概要内容 搭建步骤 安装环境 图床加速、集成Gitalk、集成Valine  绑定域名、版权配置、赞赏、站点加速等   搭建原因：几年前一直在CSDN写博客，经常用心写的文章，结果过一段时间文章关联的图片全部丢失，给他们反馈无果，图片丢失也找不回。后面就转用印象笔记，几年下来记录了不少笔记，但是发现还是缺少一个互动的环节，不知道自己写的笔记有没有问题，没法与他人发生碰撞。想快速产生好的想法或者更好">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/3.png">
+<meta property="article:published_time" content="2022-11-13T12:47:42.953Z">
+<meta property="article:modified_time" content="2022-11-13T12:47:42.953Z">
+<meta property="article:author" content="Potter">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Next">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/1.png">
+
+<link rel="canonical" href="https://yanxuewen.cn/2022/11/13/BuildBlog/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Github + Hexo + Next 搭建个人博客网站 | Potter's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Potter's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Potter's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">努力成为更强大的自我</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-guestbook">
+
+    <a href="/guestbook/" rel="section"><i class="fas fa-paper-plane fa-fw"></i>留言</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/yxw007" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yanxuewen.cn/2022/11/13/BuildBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Potter">
+      <meta itemprop="description" content="涉猎编程语言: C#、C++、JAVA、JS、Python, 领域涵盖：U3D、Vue、NodeJS、Express、Spring MVC、MyBatis、Spring Cloud、Mysql、Redis等">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Potter's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Github + Hexo + Next 搭建个人博客网站
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-11-13 12:47:42" itemprop="dateCreated datePublished" datetime="2022-11-13T12:47:42+00:00">2022-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/11/13/BuildBlog/" class="post-meta-item leancloud_visitors" data-flag-title="Github + Hexo + Next 搭建个人博客网站" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/11/13/BuildBlog/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/13/BuildBlog/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="概要内容"><a href="#概要内容" class="headerlink" title="概要内容"></a>概要内容</h3><ul>
+<li>搭建步骤</li>
+<li>安装环境</li>
+<li>图床加速、集成Gitalk、集成Valine </li>
+<li>绑定域名、版权配置、赞赏、站点加速等</li>
+</ul>
+<blockquote>
+<p>搭建原因：几年前一直在CSDN写博客，经常用心写的文章，结果过一段时间文章关联的图片全部丢失，给他们反馈无果，图片丢失也找不回。后面就转用印象笔记，几年下来记录了不少笔记，但是发现还是缺少一个互动的环节，不知道自己写的笔记有没有问题，没法与他人发生碰撞。想快速产生好的想法或者更好的解决方案，看到网上不少朋友都写在自己博客网站上，于是就决定自己也搭一个，一来记录自己成长，二来与大家互动让自己的知识得到升华，而且个人博客也显的逼格更高。 呵呵~  以下是我零碎2~3天搭自己博客网站的步骤，希望能给后面的人提供帮助。</p>
+</blockquote>
+<span id="more"></span>
+<h3 id="搭建步骤："><a href="#搭建步骤：" class="headerlink" title="搭建步骤："></a>搭建步骤：</h3><hr>
+<h4 id="Github-创建博客仓库"><a href="#Github-创建博客仓库" class="headerlink" title="Github 创建博客仓库"></a>Github 创建博客仓库</h4><p>在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。比如：aa4790139.github.io</p>
+<hr>
+<h4 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h4><p>在本机安装<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">Node.js</a></p>
+<hr>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /d/Work/Projects/PotterBlog</span><br><span class="line">cd /d/Work/Projects/PotterBlog</span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="初始化Hexo项目"><a href="#初始化Hexo项目" class="headerlink" title="初始化Hexo项目"></a>初始化Hexo项目</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>如果出现以下情况报错：<br><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/1.png" alt=""></p>
+<p>  解决办法：关闭npm 的https</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set strict-ssl false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="编译生成-amp-本地启动"><a href="#编译生成-amp-本地启动" class="headerlink" title="编译生成&amp;本地启动"></a>编译生成&amp;本地启动</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>等启动完后浏览器打开<a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a>，看到hello world 博客页面，说明你成功）</p>
+<hr>
+<h4 id="切换主题为Next"><a href="#切换主题为Next" class="headerlink" title="切换主题为Next"></a>切换主题为Next</h4><ul>
+<li><p>首先：clone next 主题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其次：修改项目根目录下的 _config.yml，找到theme字段，更改为next即可</p>
+</li>
+<li><p>最后：修改主题next的默认的相关配置，主题配置文件路径：themes/next/_config.yml (<br>具体怎么配置看这篇文章相关部分即可：<a target="_blank" rel="noopener" href="https://www.cxyxiaowu.com/6407.html">https://www.cxyxiaowu.com/6407.html</a> </p>
+</li>
+</ul>
+<hr>
+<h4 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h4><ul>
+<li><p>命令：(提示：运行如下命令后，文章会生成到source/_posts下)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new hello-world</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文章开头格式规范：(提示：按此格式方便编译识别标题、时间、类别等)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题 # 自动创建，如 hello-world</span><br><span class="line">tags: </span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br><span class="line">- 标签3</span><br><span class="line">categories:</span><br><span class="line">- 分类1</span><br><span class="line">- 分类2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="创建Github-编写Markdown文章的图床"><a href="#创建Github-编写Markdown文章的图床" class="headerlink" title="创建Github 编写Markdown文章的图床"></a>创建Github 编写Markdown文章的图床</h4><ol>
+<li>github 创建BlogPicBed 仓库</li>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/cn/github/authenticating-to-github/creating-a-personal-access-token">创建个人访问令牌</a></li>
+<li><a target="_blank" rel="noopener" href="https://github-production-release-asset-2e65be.s3.amazonaws.com/113965016/bc669d80-3b9c-11ea-9c36-8274348f10a9?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200923%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20200923T014847Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=64a969201f2341629756cedfb055010b0262aec31d37fddc06c9fdf6ac56618a&amp;X-Amz-SignedHeaders=host&amp;actor_id=9338717&amp;key_id=0&amp;repo_id=113965016&amp;response-content-disposition=attachment%3B%20filename%3DPicGo-Setup-2.2.2.exe&amp;response-content-type=application%2Foctet-stream">下载PicGo</a> (目的：利用此工具上传图片至Github创建的BlogPicBed仓库中)</li>
+<li>PicGo 配置成Github,如下图所示<br><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/2.png" alt=""></li>
+<li>利用PicGo 上传一张图片，然后去BlogPicBed仓库的img文件夹找到你刚刚上传的图片，然后右键复制图片链接地址</li>
+<li>使用Github 图床仓库的图片地址(提示：复制的图片地址是不带raw参数的，所以需要手动在地址后面拼”?raw=true” 否则图片不会显示)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如：![](https://github.com/aa4790139/BlogPicBed/blob/master/img/2.png?raw=true)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用jsdelivr CDN加速图床： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">格式：https://cdn.jsdelivr.net/gh/github账号/图床仓库名@版本/仓库图片相对路径</span><br><span class="line">比如：https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/2.png</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h4 id="集成Gitalk"><a href="#集成Gitalk" class="headerlink" title="集成Gitalk"></a>集成Gitalk</h4><ol>
+<li>获取GitHub OAuth授权(参考文章：<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/04/github-oauth.html">GitHub OAuth 第三方登录示例教程</a>)</li>
+<li>GitHub 创建留言仓库BlogGitTalk(注意：此仓库必须为公开仓库，不能为私有仓库)</li>
+<li>themes/_config.yml 找到gitalk，配置如下样子<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id: github账号 # GitHub repo owner</span><br><span class="line">  repo: BlogGitTalk # Repository name to store issues</span><br><span class="line">  client_id: GitHub OAuth授权申请下来的client_id # GitHub Application Client ID</span><br><span class="line">  client_secret: GitHub OAuth授权申请下来的client_secret # GitHub Application Client Secret</span><br><span class="line">  admin_user: github账号 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span><br><span class="line">  distraction_free_mode: true # Facebook-like distraction free mode</span><br><span class="line">  # Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span><br><span class="line">  # If you want everyone visiting your site to see a uniform language, you can set a force language value</span><br><span class="line">  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span><br><span class="line">  language: zh-CN</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="集成Valine"><a href="#集成Valine" class="headerlink" title="集成Valine"></a>集成Valine</h4><ol>
+<li>注册leancloud账号<a target="_blank" rel="noopener" href="https://www.leancloud.cn/"></a></li>
+<li>leancloud 创建应用</li>
+<li>themes/_config.yml 找到valine，配置如下样子<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid: leancloud 创建的应用AppID # Your leancloud application appid</span><br><span class="line">  appkey: leancloud 创建的应用appkey # Your leancloud application appkey</span><br><span class="line">  notify: false # Mail notifier</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: Just go go # Comment box placeholder</span><br><span class="line">  avatar: mm # Gravatar style</span><br><span class="line">  guest_info: nick,mail,link # Custom comment header</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: zh-cn # Language, available values: en, zh-cn</span><br><span class="line">  visitor: true # Article reading statistic</span><br><span class="line">  comment_count: true # If false, comment count will only be displayed in post page, not in home page</span><br><span class="line">  recordIP: false # Whether to record the commenter IP</span><br><span class="line">  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span><br><span class="line">  #post_meta_order: 0</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h4><ul>
+<li>打开blog根目录下的_config.yml配置,找到Deployment, 配置参考如下</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:github用户名/github用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>安装hexo-deployer-git 部署插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署</p>
+<ul>
+<li>在根目录新建部署脚本deploy.sh，内容如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></li>
+<li><p>运行部署命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><ol>
+<li>阿里云购买域名: <a target="_blank" rel="noopener" href="https://oss.console.aliyun.com/"></a></li>
+<li>获取github上博客项目域名的ip<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping github用户名.github.io</span><br></pre></td></tr></table></figure></li>
+<li>阿里云平台域名绑定博客域名ip(第2步ping出来的ip)<br><img data-src="https://cdn.jsdelivr.net/gh/aa4790139/BlogPicBed@master/img/3.png" alt=""></li>
+</ol>
+<hr>
+<h4 id="版权配置"><a href="#版权配置" class="headerlink" title="版权配置"></a>版权配置</h4><ol>
+<li>next/_config.yum 找到creative_commons</li>
+<li>配置成如下样子：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: false</span><br><span class="line">  post: true</span><br><span class="line">  language: zh-CN</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h3 id="QQ交流平台："><a href="#QQ交流平台：" class="headerlink" title="QQ交流平台："></a>QQ交流平台：</h3><p>hexo next主题交流：1076692090</p>
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片</a></li>
+<li><a target="_blank" rel="noopener" href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/alex-zen/p/11203544.html#%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8E%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87">Markdown必备-本地图片快速上传至图床</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/04/github-oauth.html">GitHub OAuth 第三方登录示例教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://poplite.xyz/post/2018/05/03/how-to-enable-https-for-custom-domain-on-github-pages.html">Github Pages 开始为自定义域名提供 HTTPS 支持</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jsdelivr/jsdelivr#usage">JSdelivr 使用说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.itrhx.com/2019/02/10/A18-free-cdn/">免费CDN：jsDelivr + Github</a></li>
+</ul>
+<hr>
+<h3 id="特别致谢："><a href="#特别致谢：" class="headerlink" title="特别致谢："></a>特别致谢：</h3><ul>
+<li>cxyxiaowu ：<a target="_blank" rel="noopener" href="https://www.cxyxiaowu.com/6407.html">https://www.cxyxiaowu.com/6407.html</a></li>
+<li>Lining Wei ：<a target="_blank" rel="noopener" href="https://weilining.github.io/">https://weilining.github.io/</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>以上: 如发现有问题，欢迎留言指出，我及时更正</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>如何文章对你有益，请给我买杯豆浆喝</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Potter 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Potter 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Potter
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yanxuewen.cn/2022/11/13/BuildBlog/" title="Github + Hexo + Next 搭建个人博客网站">https://yanxuewen.cn/2022/11/13/BuildBlog/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Github/" rel="tag"># Github</a>
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Next/" rel="tag"># Next</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/13/AutoTest/AutoTest01/" rel="prev" title="自动化测试-01：了解">
+      <i class="fa fa-chevron-left"></i> 自动化测试-01：了解
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%A6%81%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">概要内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">搭建步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">Github 创建博客仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-number">2.2.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96Hexo%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.4.</span> <span class="nav-text">初始化Hexo项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90-amp-%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8"><span class="nav-number">2.5.</span> <span class="nav-text">编译生成&amp;本地启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98%E4%B8%BANext"><span class="nav-number">2.6.</span> <span class="nav-text">切换主题为Next</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="nav-number">2.7.</span> <span class="nav-text">创建文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAGithub-%E7%BC%96%E5%86%99Markdown%E6%96%87%E7%AB%A0%E7%9A%84%E5%9B%BE%E5%BA%8A"><span class="nav-number">2.8.</span> <span class="nav-text">创建Github 编写Markdown文章的图床</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E6%88%90Gitalk"><span class="nav-number">2.9.</span> <span class="nav-text">集成Gitalk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E6%88%90Valine"><span class="nav-number">2.10.</span> <span class="nav-text">集成Valine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E8%87%B3Github"><span class="nav-number">2.11.</span> <span class="nav-text">部署至Github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D"><span class="nav-number">2.12.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E9%85%8D%E7%BD%AE"><span class="nav-number">2.13.</span> <span class="nav-text">版权配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QQ%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">QQ交流平台：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">参考文献：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%87%B4%E8%B0%A2%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">特别致谢：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Potter"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Potter</p>
+  <div class="site-description" itemprop="description">涉猎编程语言: C#、C++、JAVA、JS、Python, 领域涵盖：U3D、Vue、NodeJS、Express、Spring MVC、MyBatis、Spring Cloud、Mysql、Redis等</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">67</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yxw007" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yxw007" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:aa4790139@gmail.com" title="E-Mail → mailto:aa4790139@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/aa4790139" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;aa4790139" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/aa4790139" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;aa4790139" rel="noopener" target="_blank"><i class="far fa-copyright fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2020096433号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Potter</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'ace695aecbf2be1dff06',
+      clientSecret: 'c78b230a5ac0357a2dccb9407158b0b8a6c5800a',
+      repo        : 'BlogGitTalk',
+      owner       : 'aa4790139',
+      admin       : ['aa4790139'],
+      id          : 'fa5acfdb4f7ae93cc1cf68eb9bfb26c7',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'MpWTcPnkwXQLPzMAsrII21U9-gzGzoHsz',
+      appKey     : 'um0BigtMxo8GXJXe2vVVq9Ia',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
